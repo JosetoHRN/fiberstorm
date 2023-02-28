@@ -1,0 +1,54 @@
+  *, *::after, *::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .loginContainer{
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #loginForm{
+    width: 400px;
+    background-color: #f1f1f1;
+    padding: 30px;
+    border-radius: 8px;
+  }
+  #loginForm > h2{
+    margin-bottom: 12px;
+    text-align: center;
+  }
+  #loginForm > div{
+    padding: 10px 0;
+  }
+  #loginForm > div.input_group{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  #loginForm > div.remember{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 4px;
+    padding-top: 0;
+  }
+  #loginForm input:not([type="submit"]){
+    line-height: 2em;
+    padding-left: 8px;
+  }
+  .error-message{
+    color: tomato;
+  }
+  input[type="submit"]{
+    margin-top: 12px;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: aqua;
+    font-size: 18px;
+  }
