@@ -1,4 +1,5 @@
 import { createContext, useCallback, useContext, useMemo, useState } from "react";
+
 const AUTH_KEY = 'auth_key_1';
 
 export const AuthContext = createContext();

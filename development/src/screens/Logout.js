@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useAuthContext } from "../config/authContext";
 
 export default function Logout() {
-  
-  return (
-    <p>Logout</p>
-  );
+  const {logout} = useAuthContext();
+  useEffect(()=> logout());
+  return null;
 }
