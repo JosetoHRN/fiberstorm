@@ -27,10 +27,10 @@
         <label for="password">Contraseña</label>
         <input type="password" name="password" id="password" autocomplete="current-password" placeholder="Contraseña" required />
       </div>
-      <!-- <div class="remember">
+      <div class="remember">
         <input type="checkbox" name="remember" id="remember" />
         <label for="remember">Recordar este usuario</label>
-      </div> -->
+      </div>
       <p class="error-message">
         <?php if(isset($_GET["err"])) echo $_GET["info"];?>
       </p>

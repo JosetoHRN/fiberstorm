@@ -10,6 +10,7 @@
         $user_data = $req->fetch(PDO::FETCH_ASSOC);
         if($user_data) {
             $user_json = json_encode($user_data);
+            echo $user_json;
             echo "<script type=\"text/javascript\">sessionStorage.setItem(\"user_data\", JSON.stringify($user_json)); sessionStorage.setItem(\"loggedIn\", 1);</script>";
             if($remember) {
                 //localStorage (7 days)
