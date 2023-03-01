@@ -26,9 +26,9 @@ function App() {
     });
   };
   
-  if (user) {
-    return (<Home />);
-  }
+  // if (user) {
+  //   return (<Home />);
+  // }
 
   return (
     <form onSubmit={handleSubmit}>
