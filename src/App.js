@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+const React = require("react");
 import './App.css';
-import Home from './screens/Home';
+const Home = require('./screens/Home');
 function App() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [remember, setRemember] = useState(false);
-  const [user, setUser] = useState()
+  const [username, setUsername] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const [remember, setRemember] = React.useState(false);
+  const [user, setUser] = React.useState()
 
   const handleSubmit = async(e) => {
     e.preventDefault();
