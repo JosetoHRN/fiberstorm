@@ -12,13 +12,16 @@
         $arrayu = mysqli_fetch_array($exeSQL);
         if ($arrayu['password'] != $hash_password) {
             $Message = "Contraseña incorrecta.";
+            $Data = null;
         } else {
             $Message = "Accediendo...";
+            $Data = $arrayu;
         }
     } else {
         $Message = "Este usuario no existe.";
+        $Data = null;
     }
 
-    $response[] = array("Message" => $Message);
+    $response[] = array("Message" => $Message, "Data" => $Data);
     echo json_encode($response);
 ?>
