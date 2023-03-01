@@ -6,7 +6,7 @@ function Home(props) {
     return (
         <div>
             <p>Home</p>
-            <Link to="/logout">Cerrar sesión</Link>
+            <Link to="/home/logout">Cerrar sesión</Link>
         </div>
     );
 }
