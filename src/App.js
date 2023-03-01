@@ -27,7 +27,7 @@ function App() {
   };
   
   if (user) {
-    return <Home />
+    return (<Home />);
   }
 
   return (
