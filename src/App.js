@@ -1,5 +1,5 @@
 const React = require("react");
-import './App.css';
+require('./App.css');
 const Home = require('./screens/Home');
 function App() {
   const [username, setUsername] = React.useState("");
