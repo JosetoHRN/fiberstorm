@@ -1,11 +1,11 @@
-const React = require("react");
-require('./App.css');
-const Home = require('./screens/Home');
+import React, { useState } from "react";
+import './App.css';
+import Home from './screens/Home';
 function App() {
-  const [username, setUsername] = React.useState("");
-  const [password, setPassword] = React.useState("");
-  const [remember, setRemember] = React.useState(false);
-  const [user, setUser] = React.useState()
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [remember, setRemember] = useState(false);
+  const [user, setUser] = useState()
 
   const handleSubmit = async(e) => {
     e.preventDefault();
@@ -26,9 +26,9 @@ function App() {
     });
   };
   
-  // if (user) {
-  //   return (<Home />);
-  // }
+  if (user) {
+    return <Home />
+  }
 
   return (
     <form onSubmit={handleSubmit}>
