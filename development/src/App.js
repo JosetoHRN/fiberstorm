@@ -10,7 +10,6 @@ import Login from './screens/Login';
 import Logout from './screens/Logout';
 
 function App() {
-
   return (
     <AuthContextProvider>
       <BrowserRouter>
@@ -18,6 +17,7 @@ function App() {
           {/* Rutas publicas */}
           <Route path="/" element={<PublicRoute />}>
             <Route index element={<Login />}/>
+            <Route path="*" element={<Login />}/>
           </Route>
           {/* Rutas privadas */}
           <Route path="/home" element={<PrivateRoute />}>
