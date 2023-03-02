@@ -8,6 +8,9 @@ import './App.css';
 import Home from './screens/Home';
 import Login from './screens/Login';
 import Logout from './screens/Logout';
+import Inventario from './screens/Inventario';
+import Corte from './screens/Corte';
+import Costura from './screens/Costura';
 
 function App() {
   return (
@@ -22,6 +25,9 @@ function App() {
           {/* Rutas privadas */}
           <Route path="/home" element={<PrivateRoute />}>
             <Route index element={<Home />}/>
+            <Route path="/home/inventario" element={<Inventario />}/>
+            <Route path="/home/corte" element={<Corte />}/>
+            <Route path="/home/costura" element={<Costura />}/>
             <Route path="/home/logout" element={<Logout />}/>
           </Route>
         </Routes>

@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "../components/other/Header";
 import { Link } from "react-router-dom";
 
+import Header from "../components/Header";
 import '../assets/css/home.css';
 import corte from '../assets/img/corte.png';
 import costura from '../assets/img/costura.png';
@@ -18,10 +18,9 @@ const Area = ({path, text, icon}) => {
 }
 
 export default function Home() {
-    const user = window.localStorage.getItem('user');
     return (
         <>
-            <Header user={user}/>
+            <Header area=""/>
             <main>
                 <div className="home_container">
                     <h3>Seleccione su área de trabajo</h3>

@@ -26,9 +26,8 @@ export function AuthContextProvider ({children}){
                 // return response[0].Message;
                 console.log(response[0].Message);
             }else{
-                window.localStorage.setItem(AUTH_KEY, response[0].Data);
+                window.localStorage.setItem(AUTH_KEY, JSON.stringify(response[0].Data));
                 setIsAuth(response[0].Data);
-                console.log(response[0].Data);
                 // return null;
             }
         })

@@ -37,7 +37,10 @@ a{
 .secondary{
   color: var(--dark);
 }
-.secondary:hover{
+.secondary-light{
+  color: var(--light);
+}
+.secondary:hover, .secondary-light:hover{
   color: var(--orange);
   text-decoration: underline;
 }
