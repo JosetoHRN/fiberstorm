@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Header({user}) {
+export default function Header({user}) {
     const user_json = JSON.parse(user);
     return (
         <nav>
@@ -10,5 +10,3 @@ function Header({user}) {
         </nav>
     );
 }
-  
-export default Header;

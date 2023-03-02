@@ -1,11 +1,11 @@
 import { createContext, useCallback, useContext, useMemo, useState } from "react";
 
-const AUTH_KEY = 'auth_key_1';
+const AUTH_KEY = 'user';
 
 export const AuthContext = createContext();
 
 export function AuthContextProvider ({children}){
-    const [isAuth, setIsAuth] = useState(window.localStorage.getItem(AUTH_KEY) ?? false);
+    const [isAuth, setIsAuth] = useState(window.localStorage.getItem(AUTH_KEY) ?? null);
 
     const login = useCallback((username, password) => {
         fetch('./php/auth.php',{
@@ -26,8 +26,8 @@ export function AuthContextProvider ({children}){
                 // return response[0].Message;
                 console.log(response[0].Message);
             }else{
-                window.localStorage.setItem(AUTH_KEY, true);
-                setIsAuth(true);
+                window.localStorage.setItem(AUTH_KEY, response[0].Data);
+                setIsAuth(response[0].Data);
                 console.log(response[0].Data);
                 // return null;
             }
@@ -41,7 +41,7 @@ export function AuthContextProvider ({children}){
 
     const logout = useCallback(function() {
         window.localStorage.removeItem(AUTH_KEY);
-        setIsAuth(false);
+        setIsAuth(null);
     }, []);
 
     const value = useMemo(() => ({

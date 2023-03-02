@@ -13,9 +13,10 @@ export default function Login() {
     e.preventDefault();
     if(remember) localStorage.setItem('remember_username', username);
     else localStorage.removeItem('remember_username');
-    const msg = await login(username, password);
-    console.log('msg :>> ', msg);
-    msg == null ? setError('') : setError(msg);
+    login(username, password);
+    // const msg = await login(username, password);
+    // console.log('msg :>> ', msg);
+    // msg == null ? setError('') : setError(msg);
   };
 
   return (
