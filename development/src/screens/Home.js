@@ -18,6 +18,10 @@ const Area = ({path, text, icon}) => {
 }
 
 export default function Home() {
+
+    const user = localStorage.getItem('user');
+    const user_json = JSON.parse(user);
+
     return (
         <>
             <Header area=""/>

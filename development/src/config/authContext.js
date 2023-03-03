@@ -8,8 +8,8 @@ export function AuthContextProvider ({children}){
     const [isAuth, setIsAuth] = useState(window.localStorage.getItem(AUTH_KEY) ?? null);
 
     const login = useCallback((username, password) => {
-        fetch('./php/auth.php',{
-        // fetch('http://gestion.gomaespumaycojines.es/php/auth.php',{
+        // fetch('./php/auth.php',{
+        fetch('http://api.gomaespumaycojines.es/auth.php',{
             method:'POST',
             withCredentials: true,    
             crossorigin: true,    
