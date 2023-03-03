@@ -1,0 +1,39 @@
+.tableOptions{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 24px;
+    margin-top: 16px;
+}
+.tableOptions img{
+    max-width: 24px;
+    margin-right: 12px;
+}
+.tableOptions *:focus{
+    outline: none;
+}
+.tableOptions > div > label{
+    margin-right: 10px;
+}
+.searchBar{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: lightgray;
+    color: #000;
+    border-radius: 4px;
+    padding: 4px 12px;
+}
+input[type="search"], select{
+    border: none;
+    width: 300px;
+    max-width: 40vw;
+    padding: 8px;
+    background-color: lightgray;
+    
+}
+.tableOptions select{
+    width: 120px;
+    border-radius: 4px;
+    padding: 12px 4px;
+}
