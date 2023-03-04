@@ -5,7 +5,7 @@ export default function Header({area}) {
     const user = localStorage.getItem('user');
     const user_json = JSON.parse(user);
     return (
-        <nav>
+        <nav className="main-nav">
             <p>Bienvenido, {user_json.username}.</p>
             {area !== "" && (
                 <div className="header_title">

@@ -24,7 +24,7 @@
     border-radius: 4px;
     padding: 4px 12px;
 }
-input[type="search"], select{
+#searchBar, #sortBy{
     border: none;
     width: 300px;
     max-width: 40vw;
@@ -32,8 +32,48 @@ input[type="search"], select{
     background-color: lightgray;
     
 }
-.tableOptions select{
-    width: 120px;
+#sortBy{
+    min-width: 120px;
+    width: auto;
+    max-width: 300px;
     border-radius: 4px;
     padding: 12px 4px;
+    text-transform: capitalize;
+}
+#tableHeader{
+    width: 100%;
+    margin-top: 12px;
+    padding: 14px 8px;
+    background-color: #d3d3d3;
+    border-radius: 8px;
+    text-transform: capitalize;
+}
+#tableHeader > div{
+    margin: 4px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+#tableHeader span {
+    font-weight: 600;
+    flex: 1 0 200px;
+}
+#tableContent{
+    list-style: none;
+    width: 100%;
+}
+li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    background-color: #e0e0e0;
+    padding: 4px 0;
+    margin: 4px 0;
+    border-radius: 8px;
+    padding: 8px;
+}
+li > *{
+    flex: 1 0 200px;
 }
