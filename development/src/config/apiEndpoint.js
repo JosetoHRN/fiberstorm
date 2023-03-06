@@ -1,0 +1,1 @@
+export const apiEndpoint = 'http://gestion.gomaespumaycojines.es/API';

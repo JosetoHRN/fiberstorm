@@ -9,9 +9,10 @@ const Item = ({itemData}) => (
 );
 
 export default function List({data}) {
-    const keys = Object.keys(data[0]);
+    let keys = [];
+    if(data) keys = Object.keys(data[0]);
 
-    const [arr,setArr] = useState(data);
+    const [arr,setArr] = useState(data ||null);
     const [searchValue, setSearchValue] = useState('');
     const [sortValue, setSortValue] = useState('id');
     const [filteredData, setFilteredData] = useState(arr);
@@ -21,12 +22,12 @@ export default function List({data}) {
     }, [arr]);
 
     useEffect(() => {
-        const filtered = arr.filter(obj => 
+        const filtered = arr?.filter(obj => 
             Object.values(obj).some(value => 
                 String(value).toLowerCase().includes(searchValue.toLowerCase())
             )
         );
-        const sorted = filtered.sort((a, b) => {
+        const sorted = filtered?.sort((a, b) => {
             if(sortValue === 'time'){
                 const timeA = Date.parse(a.time);
                 const timeB = Date.parse(b.time);

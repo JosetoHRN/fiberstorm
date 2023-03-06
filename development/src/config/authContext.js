@@ -1,5 +1,5 @@
 import { createContext, useCallback, useContext, useMemo, useState } from "react";
-
+import {apiEndpoint} from './apiEndpoint';
 const AUTH_KEY = 'user';
 
 export const AuthContext = createContext();
@@ -9,7 +9,7 @@ export function AuthContextProvider ({children}){
 
     const login = useCallback((username, password) => {
         // fetch('./php/auth.php',{
-        fetch('http://api.gomaespumaycojines.es/auth.php',{
+        fetch(`${apiEndpoint}/auth.php`,{
             method:'POST',
             withCredentials: true,    
             crossorigin: true,    

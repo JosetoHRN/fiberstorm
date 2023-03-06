@@ -30,8 +30,8 @@ if (isset($_GET["id"])) {
         $rows = array();
         while($row = $result->fetch_assoc()) {
             $rows[] = $row;
+        	echo json_encode($row);
         }
-        echo json_encode($rows);
     } else {
         echo "0 results";
     }

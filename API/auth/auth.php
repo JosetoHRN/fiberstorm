@@ -1,5 +1,8 @@
 <?php
     include_once '../Database.php';
+    $database = new Database();
+    $conn = $database->getConnection();
+
     $encodedData = file_get_contents('php://input');
     $decodedData = json_decode($encodedData, true);
 
@@ -27,4 +30,7 @@
 
     $response[] = array("Message" => $Message, "Data" => $Data);
     echo json_encode($response);
+
+    // Close connection
+    $conn->close();
 ?>
