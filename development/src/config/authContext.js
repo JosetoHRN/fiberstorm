@@ -9,7 +9,7 @@ export function AuthContextProvider ({children}){
 
     const login = useCallback((username, password) => {
         // fetch('./php/auth.php',{
-        fetch(`${apiEndpoint}/auth.php`,{
+        fetch(`${apiEndpoint}/auth/auth.php`,{
             method:'POST',
             headers:{
               'Accept': 'application/json',
