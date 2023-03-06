@@ -11,9 +11,6 @@ export function AuthContextProvider ({children}){
         // fetch('./php/auth.php',{
         fetch(`${apiEndpoint}/auth.php`,{
             method:'POST',
-            withCredentials: true,    
-            crossorigin: true,    
-            mode: 'no-cors',
             headers:{
               'Accept': 'application/json',
               'Content-Type': 'application/json'

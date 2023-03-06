@@ -1,1 +1,1 @@
-export const apiEndpoint = 'http://gestion.gomaespumaycojines.es/API';
+export const apiEndpoint = 'https://gomaespumaycojines.es/API';

@@ -21,7 +21,6 @@ export default function Inventario() {
   useEffect(() => {
     fetch(`${apiEndpoint}/inventario/get.php`,{
       method:'GET',
-      mode: 'no-cors',
       headers:{
         'Accept': 'application/json',
         'Content-Type': 'application/json'
