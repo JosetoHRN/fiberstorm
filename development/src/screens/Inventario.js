@@ -21,18 +21,16 @@ export default function Inventario() {
   useEffect(() => {
     fetch(`${apiEndpoint}/inventario/get.php`,{
       method:'GET',
-      withCredentials: true,    
-      crossorigin: true,    
       mode: 'no-cors',
       headers:{
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       }
     })
-    .then(res =>  res.json())
+    .then(response => console.log(response.json()))
     .then(data => {
-      console.log(data);
-      // setInventory(data.json());
+      console.log('data: ',data);
+      setInventory(data);
     })
     .catch(error => {
       console.log(error);
