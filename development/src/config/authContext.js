@@ -8,14 +8,18 @@ export function AuthContextProvider ({children}){
     const [isAuth, setIsAuth] = useState(window.localStorage.getItem(AUTH_KEY) ?? null);
 
     const login = useCallback((username, password) => {
-        // fetch('./php/auth.php',{
+        const serialized = JSON.stringify({
+            username,
+            password
+        });
         fetch(`${apiEndpoint}/auth/auth.php`,{
             method:'POST',
+            mode: 'no-cors',
             headers:{
               'Accept': 'application/json',
               'Content-Type': 'application/json'
             },
-            body: JSON.stringify({username, password})
+            body: serialized
         })
         .then((response) => response.json())
         .then((response) => {
@@ -29,7 +33,7 @@ export function AuthContextProvider ({children}){
             }
         })
         .catch((error)=>{
-            console.log("Error Occured" + error);
+            console.log("Error Occured" + error.stack);
             // const msg = 'Servicio no disponible.';
             // return msg;
         });

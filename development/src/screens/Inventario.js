@@ -19,20 +19,22 @@ export default function Inventario() {
   const [inventory, setInventory] = useState('');
 
   useEffect(() => {
-    fetch(`${apiEndpoint}/inventario/get.php`,{
+    fetch(`${apiEndpoint}/inventario/get.php?id=1`,{
       method:'GET',
+      mode: 'no-cors',
       headers:{
+        'Access-Control-Allow-Origin': '*',
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       }
     })
-    .then(response => console.log(response.json()))
+    .then(response => response.json())
     .then(data => {
       console.log('data: ',data);
       setInventory(data);
     })
     .catch(error => {
-      console.log(error);
+      console.log('error: ',error);
     });
   },[]);
 
