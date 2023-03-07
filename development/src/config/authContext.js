@@ -8,18 +8,16 @@ export function AuthContextProvider ({children}){
     const [isAuth, setIsAuth] = useState(window.localStorage.getItem(AUTH_KEY) ?? null);
 
     const login = useCallback((username, password) => {
-        const serialized = JSON.stringify({
-            username,
-            password
-        });
         fetch(`${apiEndpoint}/auth/auth.php`,{
             method:'POST',
-            mode: 'no-cors',
             headers:{
               'Accept': 'application/json',
               'Content-Type': 'application/json'
             },
-            body: serialized
+            body: JSON.stringify({
+                username,
+                password
+            })
         })
         .then((response) => response.json())
         .then((response) => {

@@ -18,7 +18,7 @@ if (isset($_GET["id"])) {
         $row = $result->fetch_assoc();
         echo json_encode($row);
     } else {
-        echo "0 results";
+        echo json_encode("0 results");
     }
 } else {
     // Retrieve all records from the database
@@ -33,7 +33,7 @@ if (isset($_GET["id"])) {
         	echo json_encode($row);
         }
     } else {
-        echo "0 results";
+        echo json_encode("0 results");
     }
   }
   

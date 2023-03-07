@@ -19,11 +19,9 @@ export default function Inventario() {
   const [inventory, setInventory] = useState('');
 
   useEffect(() => {
-    fetch(`${apiEndpoint}/inventario/get.php?id=1`,{
+    fetch(`${apiEndpoint}/inventario/get.php`,{
       method:'GET',
-      mode: 'no-cors',
       headers:{
-        'Access-Control-Allow-Origin': '*',
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       }
