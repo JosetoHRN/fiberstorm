@@ -16,7 +16,7 @@ export default function Inventario() {
     })
     .then(response => {
       console.log('response: ',response);
-      response.text();
+      response.json();
     })
     .then(data => {
       console.log('data: ',data);
