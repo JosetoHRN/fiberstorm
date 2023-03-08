@@ -14,7 +14,7 @@ export default function List({name}) {
     const [allData, setAllData] = useState([]);
     const [data, setData] = useState([]);
     const [searchValue, setSearchValue] = useState('');
-    const [sortValue, setSortValue] = useState('id');
+    // const [sortValue, setSortValue] = useState('id');
 
     useEffect(() => {
         axios.get(`../get${name}.php`).then((response) => {
@@ -32,25 +32,10 @@ export default function List({name}) {
             });
             console.log('filtered :>> ', filtered);
             setData(filtered);
+        }else{
+            setData(allData);
         }
     },[searchValue]);
-
-    // useEffect(() => {
-    //     const filtered = arr?.filter(obj => 
-    //         Object.values(obj).some(value => 
-    //             String(value).toLowerCase().includes(searchValue.toLowerCase())
-    //         )
-    //     );
-    //     console.log('filtered :>> ', filtered);
-    //     const sorted = filtered?.sort((a, b) => {
-    //         if (a[sortValue] < b[sortValue]) return -1;
-    //         if (a[sortValue] > b[sortValue]) return 1;
-    //         return 0;
-    //     });
-    //     console.log('sorted :>> ', sorted);
-    //     setFilteredData(sorted);
-    // }, [arr, searchValue, sortValue]);
-
     
     if(!allData || allData.length===0){
         return (<p>No hay inventario para mostrar...</p>);
@@ -63,12 +48,12 @@ export default function List({name}) {
             <input type="text" id='searchBar' value={searchValue} placeholder='Búsqueda' onChange={(e) => setSearchValue(e.target.value)}/>
             <img src={searchIcon} alt="icono lupa"/>
           </div>
-          <div className='sortBy'>
+          {/* <div className='sortBy'>
             <label htmlFor='sortBy'>Ordenar:</label>
             <select name='sortBy' id='sortBy' value={sortValue} onChange={(e) => setSortValue(e.target.value)}>
                 {keys.map((key, index) => <option key={index} value={key}>{key}</option>)}
             </select>
-          </div>
+          </div> */}
         </section>
         <div id='tableHeader'>
             <div>
@@ -76,7 +61,7 @@ export default function List({name}) {
             </div>
         </div>
         <ul id='tableContent'>
-            {data ? (data.map((item)=>(
+            {data.length >= 1 ? (data.map((item)=>(
                 <li key={item.id}>
                     <Item itemData={item} />
                 </li>
