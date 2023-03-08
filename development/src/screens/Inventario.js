@@ -10,7 +10,7 @@ export default function Inventario(){
     axios.get('../getInventario.php').then((response) => {
       console.log('response :>> ', response);
       console.log('response.data :>> ', response.data);
-      // setInventory(response.data);
+      setInventory(response.data);
     });
   },[]);
 
