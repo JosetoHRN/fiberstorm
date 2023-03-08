@@ -9,17 +9,21 @@ const Item = ({itemData}) => (
 );
 
 export default function List({content}) {
-    let keys = [];
-    if(content) keys = Object.keys(content[0]);
-
-    const [allData, setAllData] = useState(content);
-    const [data, setData] = useState(content);
+    const [keys, setKeys] = useState([]);
+    const [allData, setAllData] = useState([]);
+    const [data, setData] = useState([]);
     const [searchValue, setSearchValue] = useState('');
     const [sortValue, setSortValue] = useState('id');
 
     useEffect(()=>{
+        console.log('content :>> ', content);
+        setKeys(Object.keys(content[0]));
+        setData(content);
+        setAllData(content);
+    },[]);
+
+    useEffect(()=>{
         if(searchValue.length>0){
-            console.log('allData :>> ', allData);
             const filtered = allData.filter(item => {
                 return `${item.modelo.toLowerCase()} ${item.tipo.toLowerCase()} ${item.importancia.toLowerCase()} ${item.estado.toLowerCase()}`.includes(searchValue.toLowerCase());
             });
