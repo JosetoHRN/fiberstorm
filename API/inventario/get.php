@@ -1,42 +1,36 @@
 <?php
-header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json; charset=UTF-8");
+    header("Access-Control-Allow-Origin: *");
+    header("Content-Type: application/json; charset=UTF-8");
+    
+    include_once '../config/database.php';
+    include_once '../models/inventario.php';
+    $database = new Database();
+    $db = $database->getConnection();
+    $items = new Inventario($db);
+    $stmt = $items->getInventario();
+    $itemCount = $stmt->rowCount();
 
-include_once '../Database.php';
-$database = new Database();
-$conn = $database->getConnection();
-
-// Check if ID parameter is present in URL
-if (isset($_GET["id"])) {
-    // Retrieve a single record from the database using the ID parameter
-    $id = $_GET["id"];
-    $sql = "SELECT * FROM inventario WHERE id = $id;";
-    $result = $conn->query($sql);
-  
-    if ($result->num_rows > 0) {
-        // Output data of each row as JSON
-        $row = $result->fetch_assoc();
-        echo json_encode($row);
-    } else {
-        echo json_encode("0 results");
-    }
-} else {
-    // Retrieve all records from the database
-    $sql = "SELECT * FROM inventario;";
-    $result = $conn->query($sql);
-  
-    if ($result->num_rows > 0) {
-        // Output data of each row as JSON
-        $rows = array();
-        while($row = $result->fetch_assoc()) {
-            $rows[] = $row;
-        	echo json_encode($row);
+    echo json_encode($itemCount);
+    if($itemCount > 0){
+        $itemsInventario = array();
+        $itemsInventario["body"] = array();
+        $itemsInventario["itemCount"] = $itemCount;
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+            extract($row);
+            $item = array(
+                "id" => $id,
+                "modelo" => $modelo,
+                "tipo" => $tipo,
+                "importancia" => $importancia,
+                "cantidad" => $cantidad,
+                "estado" => $estado
+            );
+            array_push($itemsInventario["body"], $item);
         }
-    } else {
-        echo json_encode("0 results");
+        echo json_encode($itemsInventario);
     }
-  }
-  
-  // Close connection
-  $conn->close();
-  ?>
+    else{
+        http_response_code(404);
+        echo json_encode(array("message" => "No hay registros."));
+    }
+?>
