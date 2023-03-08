@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import Table from "../components/Table";
 
 export default async function Inventario() {
-  const [inventory, setInventory] = useState([]);
+  const [inventory, setInventory] = useState('');
 
   useEffect(() => {
     axios.get('../getInventario.php').then((response) => {
