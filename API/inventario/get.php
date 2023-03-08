@@ -24,6 +24,7 @@
                 "cantidad" => $cantidad,
                 "estado" => $estado
             );
+            echo $item;
             array_push($itemsInventario["body"], $item);
         }
         echo json_encode($itemsInventario);
