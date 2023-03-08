@@ -8,37 +8,46 @@ const Item = ({itemData}) => (
     ))
 );
 
-export default function List({data}) {
+export default function List({content}) {
     let keys = [];
-    if(data) keys = Object.keys(data[0]);
+    if(content) keys = Object.keys(content[0]);
 
-    const [arr,setArr] = useState(data || null);
+    const [allData, setAllData] = useState([]);
+    const [data, setData] = useState([]);
     const [searchValue, setSearchValue] = useState('');
     const [sortValue, setSortValue] = useState('id');
-    const [filteredData, setFilteredData] = useState(arr);
 
     useEffect(() => {
-        setFilteredData(arr);
-    }, [arr]);
+        setData(content);
+        setAllData(content)
+    }, []);
 
-    useEffect(() => {
-        const filtered = arr?.filter(obj => 
-            Object.values(obj).some(value => 
-                String(value).toLowerCase().includes(searchValue.toLowerCase())
-            )
-        );
-        console.log('filtered :>> ', filtered);
-        const sorted = filtered?.sort((a, b) => {
-            if (a[sortValue] < b[sortValue]) return -1;
-            if (a[sortValue] > b[sortValue]) return 1;
-            return 0;
-        });
-        console.log('sorted :>> ', sorted);
-        setFilteredData(sorted);
-    }, [arr, searchValue, sortValue]);
+    const search = (keyword) => {
+        const filtered = allData.filter(item => {
+            return `${item.modelo.toLowerCase()} ${item.tipo.toLowerCase()} ${item.importancia.toLowerCase()} ${item.estado.toLowerCase()}`.includes(keyword.toLowerCase());
+        })
+        setSearchValue(keyword);
+        setData(filtered);
+    };
+
+    // useEffect(() => {
+    //     const filtered = arr?.filter(obj => 
+    //         Object.values(obj).some(value => 
+    //             String(value).toLowerCase().includes(searchValue.toLowerCase())
+    //         )
+    //     );
+    //     console.log('filtered :>> ', filtered);
+    //     const sorted = filtered?.sort((a, b) => {
+    //         if (a[sortValue] < b[sortValue]) return -1;
+    //         if (a[sortValue] > b[sortValue]) return 1;
+    //         return 0;
+    //     });
+    //     console.log('sorted :>> ', sorted);
+    //     setFilteredData(sorted);
+    // }, [arr, searchValue, sortValue]);
 
     
-    if(!data || data.length===0){
+    if(!content || content.length===0){
         return (<p>No hay inventario para mostrar...</p>);
     }
 
@@ -46,7 +55,7 @@ export default function List({data}) {
         <>
         <section className='tableOptions'>
           <div className='searchBar'>
-            <input type="text" id='searchBar' value={searchValue} placeholder='Búsqueda' onChange={(e) => setSearchValue(e.target.value)}/>
+            <input type="text" id='searchBar' value={searchValue} placeholder='Búsqueda' onChange={search}/>
             <img src={searchIcon} alt="icono lupa"/>
           </div>
           <div className='sortBy'>
@@ -62,7 +71,7 @@ export default function List({data}) {
             </div>
         </div>
         <ul id='tableContent'>
-            {filteredData ? (filteredData.map((item)=>(
+            {data ? (data.map((item)=>(
                 <li key={item.id}>
                     <Item itemData={item} />
                 </li>

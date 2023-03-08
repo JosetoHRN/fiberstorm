@@ -20,7 +20,7 @@ export default function Inventario(){
       <main>
         <button className="primary">Crear modelo</button>
         <button className="primary">Añadir inventario</button>
-        <Table data={inventory} />
+        <Table content={inventory} />
       </main>
     </>
   );
