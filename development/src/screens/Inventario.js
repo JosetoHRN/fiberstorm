@@ -7,7 +7,7 @@ export default function Inventario() {
   const [inventory, setInventory] = useState('');
 
   useEffect(() => {
-    fetch(`${apiEndpoint}/inventario/get.php`,{
+    fetch(`./getInventario.php`,{
       method:'GET',
       headers:{
         'Accept': 'application/json',
