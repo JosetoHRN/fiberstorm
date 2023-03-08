@@ -14,10 +14,10 @@ export default function Inventario() {
         'Content-Type': 'application/json'
       }
     })
-    .then(response => console.log('response: ', response))
+    .then(response => response.json())
     .then(data => {
       console.log('data: ',data);
-      // setInventory(data);
+      setInventory(data);
     })
     .catch(error => {
       console.log('error: ',error);
