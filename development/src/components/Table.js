@@ -19,6 +19,7 @@ export default function List({content}) {
 
     useEffect(()=>{
         if(searchValue.length>0){
+            console.log('allData :>> ', allData);
             const filtered = allData.filter(item => {
                 return `${item.modelo.toLowerCase()} ${item.tipo.toLowerCase()} ${item.importancia.toLowerCase()} ${item.estado.toLowerCase()}`.includes(searchValue.toLowerCase());
             });
