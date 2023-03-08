@@ -12,26 +12,25 @@ export default function List({content}) {
     let keys = [];
     if(content) keys = Object.keys(content[0]);
 
-    const [allData, setAllData] = useState([]);
+    const [allData, setAllData] = useState(content);
     const [data, setData] = useState([]);
     const [searchValue, setSearchValue] = useState('');
     const [sortValue, setSortValue] = useState('id');
-
-    useEffect(() => {
-        setData(content);
-        setAllData(content)
-    }, []);
 
     const search = (keyword) => {
         setSearchValue(keyword);
     };
 
     useEffect(()=>{
-        const filtered = allData.filter(item => {
-            return `${item.modelo.toLowerCase()} ${item.tipo.toLowerCase()} ${item.importancia.toLowerCase()} ${item.estado.toLowerCase()}`.includes(searchValue.toLowerCase());
-        });
-        console.log('filtered :>> ', filtered);
-        setData(filtered);
+        if(searchValue.length>0){
+            const filtered = allData.filter(item => {
+                return `${item.modelo.toLowerCase()} ${item.tipo.toLowerCase()} ${item.importancia.toLowerCase()} ${item.estado.toLowerCase()}`.includes(searchValue.toLowerCase());
+            });
+            console.log('filtered :>> ', filtered);
+            setData(filtered);
+        }else{
+            setData(content);
+        }
     },[searchValue]);
 
     // useEffect(() => {
