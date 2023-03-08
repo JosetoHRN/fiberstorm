@@ -68,7 +68,8 @@ export default function List({data}) {
             </div>
         </div>
         <ul id='tableContent'>
-            {filteredData.map((item)=>(
+            {console.log('filteredData :>> ', filteredData)}
+            {filteredData?.map((item)=>(
                 <li key={item.id}>
                     <Item itemData={item} />
                 </li>
