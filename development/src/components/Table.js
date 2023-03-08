@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import '../assets/css/table.css';
 import searchIcon from '../assets/img/search.png';
 
@@ -8,18 +9,20 @@ const Item = ({itemData}) => (
     ))
 );
 
-export default function List({content}) {
+export default function List({name}) {
     const [keys, setKeys] = useState([]);
     const [allData, setAllData] = useState([]);
     const [data, setData] = useState([]);
     const [searchValue, setSearchValue] = useState('');
     const [sortValue, setSortValue] = useState('id');
 
-    useEffect(()=>{
-        console.log('content :>> ', content);
-        setKeys(Object.keys(content[0]));
-        setData(content);
-        setAllData(content);
+    useEffect(() => {
+        axios.get(`../get${name}.php`).then((response) => {
+            console.log('response.data :>> ', response.data);
+            setAllData(response.data);
+            setData(response.data);
+            setKeys(Object.keys(response.data[0]));
+        });
     },[]);
 
     useEffect(()=>{
@@ -29,8 +32,6 @@ export default function List({content}) {
             });
             console.log('filtered :>> ', filtered);
             setData(filtered);
-        }else{
-            setData(content);
         }
     },[searchValue]);
 
@@ -51,7 +52,7 @@ export default function List({content}) {
     // }, [arr, searchValue, sortValue]);
 
     
-    if(!content || content.length===0){
+    if(!allData || allData.length===0){
         return (<p>No hay inventario para mostrar...</p>);
     }
 
