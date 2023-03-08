@@ -13,13 +13,9 @@ export default function List({content}) {
     if(content) keys = Object.keys(content[0]);
 
     const [allData, setAllData] = useState(content);
-    const [data, setData] = useState([]);
+    const [data, setData] = useState(content);
     const [searchValue, setSearchValue] = useState('');
     const [sortValue, setSortValue] = useState('id');
-
-    const search = (keyword) => {
-        setSearchValue(keyword);
-    };
 
     useEffect(()=>{
         if(searchValue.length>0){
@@ -58,7 +54,7 @@ export default function List({content}) {
         <>
         <section className='tableOptions'>
           <div className='searchBar'>
-            <input type="text" id='searchBar' value={searchValue} placeholder='Búsqueda' onChange={search}/>
+            <input type="text" id='searchBar' value={searchValue} placeholder='Búsqueda' onChange={(text => setSearchValue(text))}/>
             <img src={searchIcon} alt="icono lupa"/>
           </div>
           <div className='sortBy'>
