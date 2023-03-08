@@ -12,7 +12,7 @@ export default function List({data}) {
     let keys = [];
     if(data) keys = Object.keys(data[0]);
 
-    const [arr,setArr] = useState(data ||null);
+    const [arr,setArr] = useState(data || null);
     const [searchValue, setSearchValue] = useState('');
     const [sortValue, setSortValue] = useState('id');
     const [filteredData, setFilteredData] = useState(arr);
@@ -27,19 +27,13 @@ export default function List({data}) {
                 String(value).toLowerCase().includes(searchValue.toLowerCase())
             )
         );
+        console.log('filtered :>> ', filtered);
         const sorted = filtered?.sort((a, b) => {
-            if(sortValue === 'time'){
-                const timeA = Date.parse(a.time);
-                const timeB = Date.parse(b.time);
-                console.log('timeA, timeB :>> ', timeA, timeB);
-                return timeB - timeA;
-            }else{
-                if (a[sortValue] < b[sortValue]) return -1;
-                if (a[sortValue] > b[sortValue]) return 1;
-                return 0;
-            }
-            
+            if (a[sortValue] < b[sortValue]) return -1;
+            if (a[sortValue] > b[sortValue]) return 1;
+            return 0;
         });
+        console.log('sorted :>> ', sorted);
         setFilteredData(sorted);
     }, [arr, searchValue, sortValue]);
 
@@ -68,12 +62,11 @@ export default function List({data}) {
             </div>
         </div>
         <ul id='tableContent'>
-            {console.log('filteredData :>> ', filteredData)}
-            {filteredData?.map((item)=>(
+            {filteredData ? (filteredData.map((item)=>(
                 <li key={item.id}>
                     <Item itemData={item} />
                 </li>
-            ))}
+            ))) : <li>Ninguna coincidencia</li>}
         </ul>
         </>
     );
