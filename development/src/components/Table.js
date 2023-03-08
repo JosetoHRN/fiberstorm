@@ -18,7 +18,6 @@ export default function List({name}) {
 
     useEffect(() => {
         axios.get(`../get${name}.php`).then((response) => {
-            console.log('response.data :>> ', response.data);
             setAllData(response.data);
             setData(response.data);
             setKeys(Object.keys(response.data[0]));
@@ -30,7 +29,6 @@ export default function List({name}) {
             const filtered = allData.filter(item => {
                 return `${item.modelo.toLowerCase()} ${item.tipo.toLowerCase()} ${item.importancia.toLowerCase()} ${item.estado.toLowerCase()}`.includes(searchValue.toLowerCase());
             });
-            console.log('filtered :>> ', filtered);
             setData(filtered);
         }else{
             setData(allData);
