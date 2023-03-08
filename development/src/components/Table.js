@@ -54,7 +54,7 @@ export default function List({content}) {
         <>
         <section className='tableOptions'>
           <div className='searchBar'>
-            <input type="text" id='searchBar' value={searchValue} placeholder='Búsqueda' onChange={(text => setSearchValue(text))}/>
+            <input type="text" id='searchBar' value={searchValue} placeholder='Búsqueda' onChange={(e) => setSearchValue(e.target.value)}/>
             <img src={searchIcon} alt="icono lupa"/>
           </div>
           <div className='sortBy'>
