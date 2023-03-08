@@ -23,12 +23,16 @@ export default function List({content}) {
     }, []);
 
     const search = (keyword) => {
-        const filtered = allData.filter(item => {
-            return `${item.modelo.toLowerCase()} ${item.tipo.toLowerCase()} ${item.importancia.toLowerCase()} ${item.estado.toLowerCase()}`.includes(keyword.toLowerCase());
-        })
         setSearchValue(keyword);
-        setData(filtered);
     };
+
+    useEffect(()=>{
+        const filtered = allData.filter(item => {
+            return `${item.modelo.toLowerCase()} ${item.tipo.toLowerCase()} ${item.importancia.toLowerCase()} ${item.estado.toLowerCase()}`.includes(searchValue.toLowerCase());
+        });
+        console.log('filtered :>> ', filtered);
+        setData(filtered);
+    },[searchValue]);
 
     // useEffect(() => {
     //     const filtered = arr?.filter(obj => 
