@@ -24,10 +24,10 @@
                 "cantidad" => $cantidad,
                 "estado" => $estado
             );
-            echo $item;
             array_push($itemsInventario["body"], $item);
+            echo json_encode($itemsInventario);
         }
-        echo json_encode($itemsInventario);
+        //echo json_encode($itemsInventario);
     }
     else{
         http_response_code(404);
