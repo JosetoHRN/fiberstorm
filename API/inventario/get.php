@@ -10,11 +10,8 @@
     $stmt = $items->getInventario();
     $itemCount = $stmt->rowCount();
 
-    echo json_encode($itemCount);
     if($itemCount > 0){
         $itemsInventario = array();
-        $itemsInventario["body"] = array();
-        $itemsInventario["itemCount"] = $itemCount;
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
             extract($row);
             $item = array(
@@ -25,7 +22,7 @@
                 "cantidad" => $cantidad,
                 "estado" => $estado
             );
-            array_push($itemsInventario["body"], $item);
+            $itemsInventario[] = $item;
         }
         echo json_encode($itemsInventario);
     }
