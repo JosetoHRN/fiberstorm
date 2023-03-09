@@ -17,7 +17,7 @@ export default function List({name}) {
     // const [sortValue, setSortValue] = useState('id');
 
     useEffect(() => {
-        axios.get(`../get${name}.php`).then((response) => {
+        axios.get(`../${name.toLowerCase()}/get${name}.php`).then((response) => {
             setAllData(response.data);
             setData(response.data);
             setKeys(Object.keys(response.data[0]));
