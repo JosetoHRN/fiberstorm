@@ -8,7 +8,7 @@ export function AuthContextProvider ({children}){
     const [isAuth, setIsAuth] = useState(window.localStorage.getItem(AUTH_KEY) ?? null);
 
     const login = useCallback((username, password) => {
-        fetch(`../auth/auth.php`,{
+        fetch(`../php/auth/auth.php`,{
             method:'POST',
             headers:{
               'Accept': 'application/json',
