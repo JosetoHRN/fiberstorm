@@ -22,19 +22,17 @@ export function AuthContextProvider ({children}){
         .then((response) => response.json())
         .then((response) => {
             console.log('response :>> ', response);
-            if(response[0].Data == null){
-                // return response[0].Message;
-                console.log(response[0].Message);
+            if(response.Data == null){
+                return response.Message;
             }else{
-                window.localStorage.setItem(AUTH_KEY, JSON.stringify(response[0].Data));
-                setIsAuth(response[0].Data);
-                // return null;
+                window.localStorage.setItem(AUTH_KEY, JSON.stringify(response.Data));
+                setIsAuth(response.Data);
+                return null;
             }
         })
         .catch((error)=>{
-            console.log("Error Occured" + error.stack);
-            // const msg = 'Servicio no disponible.';
-            // return msg;
+            const msg = 'Servicio no disponible.';
+            return msg;
         });
     }, []);
 

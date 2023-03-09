@@ -13,22 +13,20 @@
     $sententcia = $conn->prepare($sql);
     $sententcia->execute();
     $fila = $sententcia->fetch(PDO::FETCH_ASSOC);
-    echo $fila;
-    // echo $_POST;
+
     if ($fila) {
-        // $arrayu = mysqli_fetch_array($exeSQL);
         if ($fila['password'] != $hash_password) {
             $Message = "Contraseña incorrecta.";
             $Data = null;
         } else {
             $Message = "Accediendo...";
-            $Data = $arrayu;
+            $Data = $fila;
         }
     } else {
         $Message = "Este usuario no existe.";
         $Data = null;
     }
 
-    $response[] = array("Message" => $Message, "Data" => $Data);
+    $response = array("Message" => $Message, "Data" => $Data);
     echo json_encode($response);
 ?>

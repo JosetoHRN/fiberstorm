@@ -16,7 +16,7 @@ export default function Login() {
     // login(username, password);
     const msg = await login(username, password);
     console.log('msg :>> ', msg);
-    msg == null ? setError('') : setError(msg);
+    msg ? setError('') : setError(msg);
   };
 
   return (
