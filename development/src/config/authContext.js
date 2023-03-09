@@ -21,7 +21,6 @@ export function AuthContextProvider ({children}){
         })
         .then((response) => response.json())
         .then((response) => {
-            console.log('response :>> ', response);
             if(response.Data == null){
                 return response.Message;
             }else{

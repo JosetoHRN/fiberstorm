@@ -10,9 +10,9 @@
     $hash_password = hash('sha3-512',$password);
 
     $sql = "SELECT * FROM usuarios WHERE username='$username';";
-    $sententcia = $conn->prepare($sql);
-    $sententcia->execute();
-    $fila = $sententcia->fetch(PDO::FETCH_ASSOC);
+    $sentencia = $conn->prepare($sql);
+    $sentencia->execute();
+    $fila = $sentencia->fetch(PDO::FETCH_ASSOC);
 
     if ($fila) {
         if ($fila['password'] != $hash_password) {

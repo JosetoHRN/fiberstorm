@@ -3,11 +3,10 @@
     $database = new Database();
     $conn = $database->getConnection();
 
-    function obtenerVideojuegos(){
-        $sentencia = $conn->query("SELECT * FROM inventario;");
-        return $sentencia->fetchAll();
-    }
-
-    $inv = obtenerVideojuegos();
+	$sql = "SELECT * FROM inventario;";
+    $sentencia = $conn->prepare($sql);
+    $sentencia->execute();
+	$inv = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+    
     echo json_encode($inv);
 ?>
