@@ -1,12 +1,11 @@
 <?php
+    session_start();
     include_once '../config/database.php';
     $database = new Database();
     $conn = $database->getConnection();
 
-    $encodedData = file_get_contents('php://input');
-    $decodedData = json_decode($encodedData, true);
-    $username = $decodedData['username'];
-    $password = $decodedData['password'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
     $hash_password = hash('sha3-512',$password);
 
     $sql = "SELECT * FROM usuarios WHERE username='$username';";
@@ -16,17 +15,15 @@
 
     if ($fila) {
         if ($fila['password'] != $hash_password) {
-            $Message = "Contraseña incorrecta.";
-            $Data = null;
+            header("Location: ../../auth/login.php?err=true&msg=Contraseña%20incorrecta.");
+            die();
         } else {
-            $Message = "Accediendo...";
-            $Data = $fila;
+            $_SESSION['auth'] = json_encode($fila);
+            header("Location: ../../home");
+            die();
         }
     } else {
-        $Message = "Este usuario no existe.";
-        $Data = null;
+        header("Location: ../../login.php?err=true&msg=Este%20usuario%20no%20existe.");
+        die();
     }
-
-    $response = array("Message" => $Message, "Data" => $Data);
-    echo json_encode($response);
 ?>
