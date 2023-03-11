@@ -1,21 +1,33 @@
-<?php session_start();
-if(isset($_SESSION['auth'])){
-    $user = $_SESSION['auth'];
-}else{
-    header("Location: ../auth");
-}
+<?php
+include_once('../components/header.php');
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fiberstorm</title>
-</head>
-<body>
-    <h1>HOME</h1>
-    <?php echo $user; ?>
-    <a href="../auth/logout.php">Salir</a>
-</body>
-</html>
+    <main>
+        <div class="home_container">
+            <h3>Seleccione su área de trabajo</h3>
+            <div class="area_container">
+                <a href="./inventario.php">
+                    <div class="avatar">
+                        <img src="../assets/img/inventario.png" alt="inventario"/>
+                    </div>
+                    <p>Inventario</p>
+                </a>
+                <a href="./corte.php">
+                    <div class="avatar">
+                        <img src="../assets/img/corte.png" alt="corte"/>
+                    </div>
+                    <p>Corte</p>
+                </a>
+                <a href="./costura.php">
+                    <div class="avatar">
+                        <img src="../assets/img/costura.png" alt="costura"/>
+                    </div>
+                    <p>Costura</p>
+                </a>
+            </div>
+        </div>
+        <h1>HOME</h1>
+        <?php echo $user; ?>
+
+<?php
+    include_once('../components/footer.php');
+?>
