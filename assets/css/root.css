@@ -17,6 +17,7 @@ body {
     scroll-behavior: smooth;
     background-color: var(--light);
     color: #000;
+    overflow-x: hidden;
 }
 input, progress{
   accent-color: var(--orange);

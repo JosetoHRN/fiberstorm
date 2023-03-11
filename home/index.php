@@ -25,8 +25,6 @@ include_once('../components/header.php');
                 </a>
             </div>
         </div>
-        <h1>HOME</h1>
-        <?php echo $user; ?>
 
 <?php
     include_once('../components/footer.php');

@@ -17,18 +17,18 @@ if(isset($_SESSION['auth'])){
 </head>
 <body>
     <nav class="main-nav">
-        <p>Bienvenido, <?php echo $user['username']; ?>.</p>
+		<p>Bienvenido, <span></span>.</p>
+		<script>
+			const auth = JSON.parse(<?php echo json_encode($user); ?>);
+			document.querySelector('.main-nav > p > span').innerHTML = auth['username'];
+		</script>
         <?php 
         if(isset($zona)) {
-            echo `<div class="header_title">
-                <h1>$zona</h1>
-                <a href="./index.php" class="change_area">(cambiar área)</a>
-            </div>`;
+            echo '<div class="header_title">
+                <h1>'.$zona.'</h1>
+                <a href="./" class="change_area">(cambiar área)</a>
+            </div>';
         }
         ?>
         <a href="../auth/logout.php" class="secondary-light">Cerrar sesión</a>
     </nav>
-
-<!--     
-</body>
-</html> -->
