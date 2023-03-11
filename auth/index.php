@@ -7,10 +7,10 @@ if(isset($_SESSION['auth'])){
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="./favicon.ico" />
+    <link rel="icon" href="../favicon.ico" />
     <meta name="theme-color" content="#2F3131" />
-    <link rel="apple-touch-icon" href="./logo192.png" />
-    <link rel="manifest" href="./manifest.json" />
+    <link rel="apple-touch-icon" href="../logo192.png" />
+    <link rel="manifest" href="../manifest.json" />
     <meta name="robots" content="nofollow, noindex" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
