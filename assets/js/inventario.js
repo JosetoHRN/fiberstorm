@@ -4,7 +4,7 @@ buttonPOST.addEventListener('click', () => {
 });
 
 const searchBar = document.getElementById('searchBar');
-searchBar.addEventListener('change', (e) => {
+searchBar.addEventListener('input', (e) => {
     console.log('object :>> ', e.target.value);
 })
 
