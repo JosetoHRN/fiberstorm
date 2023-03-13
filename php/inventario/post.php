@@ -4,7 +4,7 @@
     $conn = $database->getConnection();
 
 
-    echo isset($_FILES['imagen']['name']);
+    echo isset($_FILES['imagen']['name']) ? 'si' : 'no';
     // if(isset($_POST["submit"])) {
     //     $modelo = $_POST['modelo'];
     //     $tipo = $_POST['tipo'];
