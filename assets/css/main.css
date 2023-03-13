@@ -68,6 +68,9 @@ main{
     padding: 40px;
     border-radius: 12px;
 }
+#POST_form > h3{
+    margin-bottom: 24px;
+}
 #POST_form .botonera{
     padding-top: 24px;
     display: flex;
