@@ -20,7 +20,7 @@ include_once("../components/header.php");
     <div id="tableHeader"></div>
     <ul id="tableContent"></ul>
 
-    <div id="POST_form" class="form">
+    <div id="POST_form">
         <h3>Añadir nuevo</h3>
         <form action="../php/inventario/post.php" method="post">
             <div>
