@@ -4,7 +4,9 @@
     $conn = $database->getConnection();
 
 
-    echo isset($_FILES['imagen']['name']) ? 'si' : 'no';
+    if(!file_exists($_FILES['myfile']['tmp_name']) || !is_uploaded_file($_FILES['myfile']['tmp_name'])) {
+        echo 'No upload';
+    }
     // if(isset($_POST["submit"])) {
     //     $modelo = $_POST['modelo'];
     //     $tipo = $_POST['tipo'];
