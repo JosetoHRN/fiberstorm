@@ -77,7 +77,7 @@ form > div:not(.botonera){
     flex-direction: column;
     gap: 4px;
 }
-form input:not([type="submit"]){
+form input:not([type="submit"], [type="file"]){
     line-height: 2em;
     padding-left: 8px;
 }
