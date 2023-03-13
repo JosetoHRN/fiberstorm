@@ -29,7 +29,7 @@ const getData = async () => {
                 tableHeader.appendChild(header);
             }
         });
-        let header = document.createElement('span');
+        let header = document.createElement('p');
         header.innerText = 'Acciones';
         tableHeader.appendChild(header);
         // Table content
