@@ -42,7 +42,7 @@ include_once("../components/header.php");
             <div>
             <label for="importancia">Importancia: </label>
             <select name="importancia" id="importancia">
-                <option value="Normal">Normal</option>
+                <option value="Normal" selected>Normal</option>
                 <option value="Media">Media</option>
                 <option value="Alta">Alta</option>
             </select>
