@@ -81,6 +81,12 @@ form input:not([type="submit"], [type="file"]){
     line-height: 2em;
     padding-left: 8px;
 }
+form select {
+    height: 2em;
+}
+form option:focus{
+    background-color: var(--orange-light);
+}
 #POST_form .botonera{
     padding-top: 24px;
     display: flex;

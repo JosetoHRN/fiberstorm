@@ -2,6 +2,7 @@
     --dark: #2F3131;
     --light: #F7F4F3;
     --orange: #E08E45;
+    --orange-light: #e9b07d;
 }
 *,*::after,*::before{
     margin: 0;
