@@ -4,8 +4,11 @@
     $conn = $database->getConnection();
 
 
-    if($_FILES['imagen']['name'] != "") {
-        echo 'Upload';
+    if($_FILES['imagen']['name'] != "" && $_FILES['imagen']['size'] > 0) {
+        echo $_FILES['imagen']['name'];
+        echo $_FILES['imagen']['type'];
+        echo $_FILES['imagen']['size'];
+        echo $_FILES['imagen']['error'];
     }else{
         echo "no upload";
     }
