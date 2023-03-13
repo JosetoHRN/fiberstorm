@@ -25,7 +25,7 @@ if(isset($_SESSION['auth'])){
         <?php 
         if(isset($zona)) {
             echo '<div class="header_title">
-                <h1>'.$zona.'</h1>
+                <h3>'.$zona.'</h3>
                 <a href="./" class="change_area">(cambiar área)</a>
             </div>';
         }
