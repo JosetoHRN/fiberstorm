@@ -41,7 +41,7 @@ include_once("../components/header.php");
             <input type="text" name="estado" id="estado" placeholder="En corte, En almacén, En costura, etc.">
             <label for="cantidad">Cantidad</label>
             <input type="number" name="cantidad" id="cantidad" min="1" placeholder="1" required>
-            <div>
+            <div class="botonera">
                 <input type="submit" value="Aceptar">
                 <button class="closeForm">Cancelar</button>
             </div>

@@ -1,13 +1,13 @@
 const formPOST = document.getElementById('POST_form');
 const buttonPOST = document.getElementById('postInventario');
 buttonPOST.addEventListener('click', () => {
-    formPOST.style.display = 'fixed';
+    formPOST.style.display = 'block';
 });
 
 const closeForm = document.getElementsByClassName('closeForm');
 for(let i=0; i<closeForm.length; i++){
     closeForm[i].addEventListener('click', (e) => {
-        e.parentNode.parentNode.parentNode.style.display='none';
+        e.target.parentNode.parentNode.parentNode.style.display='none';
     });
 }
 

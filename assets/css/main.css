@@ -63,4 +63,27 @@ main{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background-color: var(--dark);
+    color: var(--light);
+    padding: 40px;
+    border-radius: 12px;
+}
+#POST_form .botonera{
+    padding-top: 24px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+#POST_form .botonera > *{
+    padding: 8px 24px;
+    background-color: var(--light);
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.botonera > *:hover{
+    cursor: pointer;
 }
