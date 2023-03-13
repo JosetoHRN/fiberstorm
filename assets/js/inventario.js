@@ -24,7 +24,7 @@ const getData = async () => {
         const keys = Object.keys(data[0]);
         keys.map((value) => {
             if(value != 'id'){
-                let header = document.createElement('span');
+                let header = document.createElement('p');
                 header.innerText = value;
                 tableHeader.appendChild(header);
             }
@@ -38,7 +38,7 @@ const getData = async () => {
             row.id = "inventario-"+item.id;
             Object.values(item).map((value,index) => {
                 if(index != 0){
-                    if(index == 4){
+                    if(value.includes('.png') || value.includes('.jpg') || value.includes('.jpeg')){
                         let img = document.createElement('img');
                         img.alt = value;
                         img.src = '../assets/img/inventario/'+value;

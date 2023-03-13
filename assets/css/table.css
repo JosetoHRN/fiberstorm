@@ -51,9 +51,9 @@
     align-items: center;
     flex-wrap: nowrap;
 }
-#tableHeader > span {
+#tableHeader > p {
     font-weight: 600;
-    flex: 1 1 100px;
+    flex: 1 0 100px;
 }
 #tableContent{
     list-style: none;
@@ -71,7 +71,8 @@ li{
     padding: 8px;
 }
 li > *{
-    flex: 1 1 100px;
+    flex: 1 0 100px;
+    padding-right: 16px;
 }
 li > img{
     max-width: 48px;
