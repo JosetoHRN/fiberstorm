@@ -83,6 +83,7 @@ searchBar.addEventListener('input', (e) => {
     const rows = tableContent.getElementsByTagName('li');
     for(let i=0; i<rows.length; i++){
         const lowercaseRow = Object.values(rows[i]).map((text)=>text.toLowerCase());
+        console.log('lowercaseRow :>> ', lowercaseRow);
         if(lowercaseRow.includes(searchTerm)){
             rows[i].style.display='flex';
         }else{
