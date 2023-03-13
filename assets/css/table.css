@@ -30,7 +30,6 @@
     max-width: 40vw;
     padding: 8px;
     background-color: lightgray;
-    
 }
 #sortBy{
     min-width: 120px;
@@ -54,7 +53,7 @@
 }
 #tableHeader > span {
     font-weight: 600;
-    flex: 1 0 200px;
+    flex: 1 1 200px;
 }
 #tableContent{
     list-style: none;
@@ -73,4 +72,10 @@ li{
 }
 li > *{
     flex: 1 0 200px;
+}
+.tableActions{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
 }
