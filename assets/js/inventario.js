@@ -84,9 +84,9 @@ searchBar.addEventListener('input', (e) => {
     for(let i=0; i<rows.length; i++){
         const lowercaseRow = Object.values(rows[i]).map((text)=>text.toLowerCase());
         if(lowercaseRow.includes(searchTerm)){
-            rows[i].styles.display='flex';
+            rows[i].style.display='flex';
         }else{
-            rows[i].styles.display='none';
+            rows[i].style.display='none';
         }
     }
     // rows.map((row) => {
