@@ -81,12 +81,20 @@ const searchBar = document.getElementById('searchBar');
 searchBar.addEventListener('input', (e) => {
     const searchTerm = e.target.value.toLowerCase();
     const rows = tableContent.getElementsByTagName('li');
-    rows.map((row) => {
-        const lowercaseRow = Object.values(row).map((text)=>text.toLowerCase());
+    for(let i=0; i<rows.length; i++){
+        const lowercaseRow = Object.values(rows[i]).map((text)=>text.toLowerCase());
         if(lowercaseRow.includes(searchTerm)){
-            row.styles.display='flex';
+            rows[i].styles.display='flex';
         }else{
-            row.styles.display='none';
+            rows[i].styles.display='none';
         }
-    });
+    }
+    // rows.map((row) => {
+    //     const lowercaseRow = Object.values(row).map((text)=>text.toLowerCase());
+    //     if(lowercaseRow.includes(searchTerm)){
+    //         row.styles.display='flex';
+    //     }else{
+    //         row.styles.display='none';
+    //     }
+    // });
 });
