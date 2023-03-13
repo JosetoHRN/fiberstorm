@@ -87,13 +87,13 @@ searchBar.addEventListener('input', (e) => {
         for(let j=0; j<children.length; j++){
             arr.push(children[j].innerText.toLowerCase())
         }
-        arr.map(text => {
-            if(text.includes(searchTerm)){
-                rows[i].style.display='flex';
-            }else{
-                rows[i].style.display='none';
-            }
-        });
+        let is = 0;
+        arr.map(text => { if(text.includes(searchTerm)) is = 1; });
+        if(is){
+            rows[i].style.display='flex';
+        }else{
+            rows[i].style.display='none';
+        }
     }
     // rows.map((row) => {
     //     const lowercaseRow = Object.values(row).map((text)=>text.toLowerCase());
