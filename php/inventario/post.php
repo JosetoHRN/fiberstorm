@@ -4,7 +4,7 @@
     $conn = $database->getConnection();
 
 
-    if(!file_exists($_FILES['myfile']['tmp_name']) || !is_uploaded_file($_FILES['myfile']['tmp_name'])) {
+    if(!is_uploaded_file($_FILES['myfile']['tmp_name'])) {
         echo 'No upload';
     }
     // if(isset($_POST["submit"])) {
