@@ -3,8 +3,10 @@ buttonPOST.addEventListener('click', () => {
     console.log('post button clicked :>> ');
 });
 
-const tableOptions = document.getElementById('tableOptions');
-
+const searchBar = document.getElementById('searchBar');
+searchBar.addEventListener('change', (e) => {
+    console.log('object :>> ', e.target.value);
+})
 
 const tableHeader = document.getElementById('tableHeader');
 const tableContent = document.getElementById('tableContent');

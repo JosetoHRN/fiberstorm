@@ -7,7 +7,7 @@ include_once("../components/header.php");
     <button class="primary" id="postInventario">Añadir inventario</button>
     <section id="tableOptions">
         <div class="searchBar">
-            <input type="text" id="searchBar" placeholder="Búsqueda" onchange=""/>
+            <input type="text" id="searchBar" placeholder="Búsqueda"/>
             <img src="../assets/img/search.png" alt="icono lupa"/>
         </div>
         <!-- <div class="sortBy">
@@ -17,16 +17,8 @@ include_once("../components/header.php");
             </select>
         </div> -->
     </section>
-    <div id="tableHeader">
-        <!-- {keys.map((value) => (<span key={value}>{value}</span>))} -->
-    </div>
-    <ul id="tableContent">
-        <!-- {data.length >= 1 ? (data.map((item)=>(
-            <li key={item.id}>
-                <Item itemData={item} />
-            </li>
-        ))) : <li>Ninguna coincidencia</li>} -->
-    </ul>
+    <div id="tableHeader"></div>
+    <ul id="tableContent"></ul>
 
     <script type="application/javascript" src="../assets/js/inventario.js"></script>
 <?php
