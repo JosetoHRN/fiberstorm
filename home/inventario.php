@@ -17,9 +17,7 @@ include_once("../components/header.php");
         </div> -->
     </section>
     <div id="tableHeader">
-        <div>
-            <!-- {keys.map((value) => (<span key={value}>{value}</span>))} -->
-        </div>
+        <!-- {keys.map((value) => (<span key={value}>{value}</span>))} -->
     </div>
     <ul id="tableContent">
         <!-- {data.length >= 1 ? (data.map((item)=>(
