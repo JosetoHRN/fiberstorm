@@ -1,7 +1,16 @@
+const formPOST = document.getElementById('POST_form');
 const buttonPOST = document.getElementById('postInventario');
 buttonPOST.addEventListener('click', () => {
-    console.log('post button clicked :>> ');
+    formPOST.style.display = 'fixed';
 });
+
+const closeForm = document.getElementsByClassName('closeForm');
+for(let i=0; i<closeForm.length; i++){
+    closeForm[i].addEventListener('click', (e) => {
+        e.parentNode.parentNode.parentNode.style.display='none';
+    });
+}
+
 
 const tableHeader = document.getElementById('tableHeader');
 const tableContent = document.getElementById('tableContent');
@@ -95,12 +104,4 @@ searchBar.addEventListener('input', (e) => {
             rows[i].style.display='none';
         }
     }
-    // rows.map((row) => {
-    //     const lowercaseRow = Object.values(row).map((text)=>text.toLowerCase());
-    //     if(lowercaseRow.includes(searchTerm)){
-    //         row.styles.display='flex';
-    //     }else{
-    //         row.styles.display='none';
-    //     }
-    // });
 });
