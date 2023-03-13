@@ -82,9 +82,12 @@ searchBar.addEventListener('input', (e) => {
     const searchTerm = e.target.value.toLowerCase();
     const rows = tableContent.getElementsByTagName('li');
     for(let i=0; i<rows.length; i++){
-        const lowercaseRow = Object.values(rows[i]).map((text)=>text.toLowerCase());
-        console.log('lowercaseRow :>> ', lowercaseRow);
-        if(lowercaseRow.includes(searchTerm)){
+        const children = rows[i].children;
+        let arr = [];
+        for(let j=0; j<children.length; j++){
+            arr.push(children[j].innerText.toLowerCase())
+        }
+        if(arr.includes(searchTerm)){
             rows[i].style.display='flex';
         }else{
             rows[i].style.display='none';
