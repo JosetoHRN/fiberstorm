@@ -87,6 +87,7 @@ searchBar.addEventListener('input', (e) => {
         for(let j=0; j<children.length; j++){
             arr.push(children[j].innerText.toLowerCase())
         }
+        console.log(arr)
         if(arr.includes(searchTerm)){
             rows[i].style.display='flex';
         }else{
