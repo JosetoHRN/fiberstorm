@@ -14,6 +14,11 @@ if(isset($_SESSION['auth'])){
     <title>Fiberstorm gestión</title>
     <link rel="stylesheet" href="../assets/css/root.css">
     <link rel="stylesheet" href="../assets/css/main.css">
+    <?php
+    if(isset($extraCss)) {
+        echo '<link rel="stylesheet" href="../assets/css/'.$extraCss.'">';
+    }
+    ?>
 </head>
 <body>
     <nav class="main-nav">

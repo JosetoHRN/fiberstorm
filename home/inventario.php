@@ -1,5 +1,6 @@
 <?php
 $zona="Inventario ";
+$extraCss = "table.css";
 include_once("../components/header.php");
 ?>
 <main>
@@ -26,7 +27,6 @@ include_once("../components/header.php");
             </li>
         ))) : <li>Ninguna coincidencia</li>} -->
     </ul>
-
 
     <script type="application/javascript" src="../assets/js/inventario.js"></script>
 <?php
