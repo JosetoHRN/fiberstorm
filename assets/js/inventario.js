@@ -38,9 +38,16 @@ const getData = async () => {
             row.id = "inventario-"+item.id;
             Object.values(item).map((value,index) => {
                 if(index != 0){
-                    let data = document.createElement('p');
-                    data.innerText = value;
-                    row.appendChild(data);
+                    if(index == 4){
+                        let img = document.createElement('img');
+                        img.alt = value;
+                        img.src = '../assets/img/inventario/'+value;
+                        row.appendChild(img);
+                    }else{
+                        let data = document.createElement('p');
+                        data.innerText = value;
+                        row.appendChild(data);
+                    }
                 }
             });
             // Append actions
@@ -61,8 +68,14 @@ const getData = async () => {
 getData();
 
 const modifyItem = (id) =>{
+    // Show put form and submit fetch
     console.log('modify item: ', id);
 };
+
 const deleteItem = (id) =>{
-    console.log('delete item: ', id);
+    let text = "¿Desea eliminar este objeto del inventario?";
+    if (confirm(text) == true) {
+        // fetch delete method
+        console.log('deleted item :>> ', id);
+    }
 };

@@ -73,6 +73,10 @@ li{
 li > *{
     flex: 1 1 100px;
 }
+li > img{
+    max-width: 48px;
+    max-height: 48px;
+}
 .tableActions{
     display: flex;
     flex-wrap: nowrap;
