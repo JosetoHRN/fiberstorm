@@ -20,27 +20,27 @@ include_once("../components/header.php");
     <div id="tableHeader"></div>
     <ul id="tableContent"></ul>
 
-    <div id="POST_form">
+    <div id="POST_form" class="form">
         <h3>Añadir nuevo</h3>
         <form action="../php/inventario/post.php" method="post">
             <div>
-                <label for="modelo">Modelo</label>
-                <input type="text" name="modelo" id="modelo" placeholder="Modelo" required>
+                <label for="modelo">Modelo: </label>
+                <input type="text" name="modelo" id="modelo" placeholder="Modelo">
             </div>
             <div>
-            <label for="tipo">Tipo</label>
+            <label for="tipo">Tipo: </label>
             <input type="text" name="tipo" id="tipo" placeholder="Tipo">
             </div>
             <div>
-            <label for="ref">Referencia</label>
+            <label for="ref">Referencia: </label>
             <input type="text" name="ref" id="ref" placeholder="Ubicación en el almacén">
             </div>
             <div>
-            <label for="imagen">Icono</label>
+            <label for="imagen">Icono: </label>
             <input type="file" name="imagen" id="imagen" accept="image/png, image/jpg, image/jpeg">
             </div>
             <div>
-            <label for="importancia">Importancia</label>
+            <label for="importancia">Importancia: </label>
             <select name="importancia" id="importancia">
                 <option value="Normal">Normal</option>
                 <option value="Media">Media</option>
@@ -48,12 +48,12 @@ include_once("../components/header.php");
             </select>
             </div>
             <div>
-            <label for="estado">Estado</label>
+            <label for="estado">Estado: </label>
             <input type="text" name="estado" id="estado" placeholder="En corte, En almacén, En costura, etc.">
             </div>
             <div>
-            <label for="cantidad">Cantidad</label>
-            <input type="number" name="cantidad" id="cantidad" min="1" placeholder="1" required>
+            <label for="cantidad">Cantidad: </label>
+            <input type="number" name="cantidad" id="cantidad" min="1" placeholder="1">
             </div>
             <div class="botonera">
                 <input type="submit" value="Aceptar">
