@@ -72,7 +72,7 @@ li{
 }
 li > *{
     flex: 1 0 100px;
-    padding-right: 16px;
+    margin-right: 16px;
 }
 li > img{
     max-width: 48px;
@@ -80,21 +80,24 @@ li > img{
 }
 li > p.importancia-normal{
     color: #68CE42;
-    border: 1px solid #68CE42;
+    border: 2px solid #68CE42;
     background-color: #b4e7a1;
     padding: 4px 16px;
 }
 li > p.importancia-media{
     color: #FF9952;
-    border: 1px solid #FF9952;
+    border: 2px solid #FF9952;
     background-color: #ffcca9;
     padding: 4px 16px;
 }
 li > p.importancia-alta{
     color: tomato;
-    border: 1px solid tomato;
+    border: 2px solid tomato;
     background-color: #ffb1a3;
     padding: 4px 16px;
+    border-radius: 6px;
+    flex-grow: 0;
+    text-align: center;
 }
 .tableActions{
     display: flex;
