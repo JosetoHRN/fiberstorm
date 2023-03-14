@@ -125,7 +125,6 @@ sortBy.addEventListener('change', (e) => {
         }
         newRows.push(arr);
     }
-    console.log('rows without order :>> ', newRows);
     newRows.sort((a,b) => {
         const aValue = a[sortTerm];
         const bValue = b[sortTerm];
@@ -137,6 +136,26 @@ sortBy.addEventListener('change', (e) => {
         }
         return 0;
     });
-    console.log('newRows :>> ', newRows);
     
+    // Actualizar filas de la tabla en función del orden de newRows
+    for(let i=0; i<newRows.length; i++){
+        const newRow = newRows[i];
+        for(let j=0; j<rows.length; j++){
+            const children = rows[j].children;
+            let match = true;
+            for(let k=0; k<newRow.length; k++){
+                const cellValue = newRow[k];
+                const cellContent = children[k].innerText.toLowerCase();
+                if(cellValue !== cellContent){
+                    match = false;
+                    break;
+                }
+            }
+            if(match){
+                // Si las celdas coinciden, actualizamos la posición de la fila
+                tableContent.insertBefore(rows[j], rows[i]);
+                break;
+            }
+        }
+    }
 });
