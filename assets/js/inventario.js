@@ -7,7 +7,8 @@ buttonPOST.addEventListener('click', () => {
 const closePopups = document.getElementsByClassName('close_popup');
 for(let i=0; i<closePopups.length; i++){
     closePopups[i].addEventListener('click', (e) => {
-        e.target.parentNode.style.display='none';
+        console.log('e.target :>> ', e.target);
+        // e.target.parentNode.style.display='none';
     });
 }
 const closeForm = document.getElementsByClassName('closeForm');
