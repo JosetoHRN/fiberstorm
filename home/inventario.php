@@ -25,6 +25,11 @@ include_once("../components/header.php");
     <div id="tableHeader"></div>
     <ul id="tableContent"></ul>
 
+    <div class="popup" id="imageViewer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="close_popup" height="24" width="24" fill="var(--light)"><path d="M6.4 19 5 17.6l5.6-5.6L5 6.4 6.4 5l5.6 5.6L17.6 5 19 6.4 13.4 12l5.6 5.6-1.4 1.4-5.6-5.6Z"/></svg>
+        <img src="" alt="" />
+    </div>
+
     <div id="POST_form">
         <h3>Añadir nuevo</h3>
         <form action="../php/inventario/post.php" method="post" enctype="multipart/form-data">

@@ -4,6 +4,12 @@ buttonPOST.addEventListener('click', () => {
     formPOST.style.display = 'block';
 });
 
+const closePopups = document.getElementsByClassName('close_popup');
+for(let i=0; i<closePopups.length; i++){
+    closePopups[i].addEventListener('click', (e) => {
+        e.target.parentNode.style.display='none';
+    });
+}
 const closeForm = document.getElementsByClassName('closeForm');
 for(let i=0; i<closeForm.length; i++){
     closeForm[i].addEventListener('click', (e) => {
@@ -11,10 +17,8 @@ for(let i=0; i<closeForm.length; i++){
     });
 }
 
-
 const tableHeader = document.getElementById('tableHeader');
 const tableContent = document.getElementById('tableContent');
-
 const getData = async () => {
     // Set loading
     fetch('../php/inventario/getAll.php',{
@@ -161,14 +165,16 @@ sortBy.addEventListener('change', (e) => {
     }
 });
 
+const imageViewer = document.getElementById('imageViewer');
 function addEventsTable(){
     // Images
     const imgs = document.getElementById('tableContent').getElementsByTagName('img');
     for(let i=0; i<imgs.length; i++){
         console.log('imgs[i] :>> ', imgs[i]);
-        imgs[i].addEventListener('click', (e)=>{
-            const url = imgs[i].src;
-            console.log('url :>> ', url, e);
+        imgs[i].addEventListener('click', ()=>{
+            imageViewer.style.display = "fixed";
+            imageViewer.getElementsByTagName('img')[0].src = imgs[i].src;
+            imageViewer.getElementsByTagName('img')[0].alt = imgs[i].alt;
         });
     }
 

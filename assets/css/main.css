@@ -54,7 +54,29 @@ main{
     background-color: var(--light);
 }
 
-
+/* POP UPS */
+.popup{
+    display: none; /* fixed */
+    z-index: 999;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 24px;
+    background-color: var(--dark);
+}
+.close_popup{
+    position: relative;
+    top: 10px;
+    right: 10px;
+    margin-bottom: 12px;
+}
+.close_popup:hover{
+    cursor: pointer;
+}
+#imageViewer img{
+    max-width: 100%;
+}
 /* FORMS */
 #POST_form{
     display: none; /* fixed */
