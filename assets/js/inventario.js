@@ -98,7 +98,7 @@ const deleteItem = (id) =>{
     if (confirm(text) == true) {
         // fetch delete method
         fetch(`../php/inventario/delete.php?id=${id}`,{
-            method: 'DELETE',
+            method: 'GET',
             headers:{
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
