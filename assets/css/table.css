@@ -39,6 +39,9 @@
     padding: 12px 4px;
     text-transform: capitalize;
 }
+option{
+    padding: 6px;
+}
 #tableHeader{
     width: 100%;
     margin: 12px 0 4px 0;

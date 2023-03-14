@@ -72,7 +72,7 @@ const getData = async () => {
             });
             // Append actions
             let data = document.createElement('p');
-            data.innerHTML = '<div class="tableActions"><svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" onclick="modifyItem('+item.id+')"><path d="M5.15 19H6.4l9.25-9.25-1.225-1.25-9.275 9.275Zm13.7-10.35L15.475 5.3l1.3-1.3q.45-.425 1.088-.425.637 0 1.062.425l1.225 1.225q.425.45.45 1.062.025.613-.425 1.038Zm-1.075 1.1L7.025 20.5H3.65v-3.375L14.4 6.375Zm-2.75-.625-.6-.625 1.225 1.25Z"/></svg><svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" fill="tomato" onclick="deleteItem('+item.id+')"><path d="M7.3 20.5q-.75 0-1.275-.525Q5.5 19.45 5.5 18.7V6h-1V4.5H9v-.875h6V4.5h4.5V6h-1v12.7q0 .75-.525 1.275-.525.525-1.275.525ZM17 6H7v12.7q0 .125.088.213.087.087.212.087h9.4q.1 0 .2-.1t.1-.2ZM9.4 17h1.5V8H9.4Zm3.7 0h1.5V8h-1.5ZM7 6V19v-.3Z"/></svg></div>';
+            data.innerHTML = '<div class="tableActions"><svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" onclick="modifyItem(this)"><path d="M5.15 19H6.4l9.25-9.25-1.225-1.25-9.275 9.275Zm13.7-10.35L15.475 5.3l1.3-1.3q.45-.425 1.088-.425.637 0 1.062.425l1.225 1.225q.425.45.45 1.062.025.613-.425 1.038Zm-1.075 1.1L7.025 20.5H3.65v-3.375L14.4 6.375Zm-2.75-.625-.6-.625 1.225 1.25Z"/></svg><svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" fill="tomato" onclick="deleteItem('+item.id+')"><path d="M7.3 20.5q-.75 0-1.275-.525Q5.5 19.45 5.5 18.7V6h-1V4.5H9v-.875h6V4.5h4.5V6h-1v12.7q0 .75-.525 1.275-.525.525-1.275.525ZM17 6H7v12.7q0 .125.088.213.087.087.212.087h9.4q.1 0 .2-.1t.1-.2ZM9.4 17h1.5V8H9.4Zm3.7 0h1.5V8h-1.5ZM7 6V19v-.3Z"/></svg></div>';
             row.appendChild(data);
             tableContent.appendChild(row);
         });
@@ -86,7 +86,11 @@ const getData = async () => {
 
 getData();
 
-const modifyItem = (id) =>{
+const formPUT = document.getElementById('PUT_form');
+
+const modifyItem = (e) =>{
+    console.log('e.target :>> ', e.target);
+    formPUT.style.display = 'block';
     // Show put form and submit fetch
     console.log('modify item: ', id);
 };

@@ -80,7 +80,7 @@ main{
     margin-top: 24px;
 }
 /* FORMS */
-#POST_form{
+#POST_form, #PUT_form{
     display: none; /* block */
     min-width: 499px;
     z-index: 999;
@@ -93,7 +93,7 @@ main{
     padding: 40px;
     border-radius: 12px;
 }
-#POST_form > h3{
+#POST_form > h3, #PUT_form > h3{
     margin-bottom: 24px;
 }
 form > div:not(.botonera){
