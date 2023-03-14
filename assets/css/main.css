@@ -56,7 +56,7 @@ main{
 
 /* POP UPS */
 .popup{
-    display: none; /* fixed */
+    display: none; /* block */
     z-index: 999;
     position: absolute;
     top: 50%;
@@ -79,7 +79,7 @@ main{
 }
 /* FORMS */
 #POST_form{
-    display: none; /* fixed */
+    display: none; /* block */
     z-index: 999;
     position: absolute;
     top: 50%;

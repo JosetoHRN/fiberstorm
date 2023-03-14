@@ -170,9 +170,8 @@ function addEventsTable(){
     // Images
     const imgs = document.getElementById('tableContent').getElementsByTagName('img');
     for(let i=0; i<imgs.length; i++){
-        console.log('imgs[i] :>> ', imgs[i]);
         imgs[i].addEventListener('click', ()=>{
-            imageViewer.style.display = "fixed";
+            imageViewer.style.display = "block";
             imageViewer.getElementsByTagName('img')[0].src = imgs[i].src;
             imageViewer.getElementsByTagName('img')[0].alt = imgs[i].alt;
         });
