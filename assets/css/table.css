@@ -75,8 +75,8 @@ li > *{
     margin-right: 16px;
 }
 li > img{
-    max-width: 48px;
-    max-height: 48px;
+    max-width: 32px;
+    max-height: 32px;
 }
 li > p.importancia-normal{
     color: #68CE42;
