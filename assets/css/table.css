@@ -78,26 +78,24 @@ li > img{
     max-width: 32px;
     max-height: 32px;
 }
-li > p.importancia-normal{
-    color: #68CE42;
-    border: 2px solid #68CE42;
-    background-color: #b4e7a1;
-    padding: 4px 16px;
-}
-li > p.importancia-media{
-    color: #FF9952;
-    border: 2px solid #FF9952;
-    background-color: #ffcca9;
-    padding: 4px 16px;
-}
-li > p.importancia-alta{
-    color: tomato;
-    border: 2px solid tomato;
-    background-color: #ffb1a3;
+li > p.importancia{
+    color: black;
     padding: 4px 16px;
     border-radius: 6px;
     flex-grow: 0;
     text-align: center;
+}
+.importancia-normal{
+    border: 2px solid #68CE42;
+    background-color: #b4e7a1;
+}
+.importancia-media{
+    border: 2px solid #FF9952;
+    background-color: #ffcca9;
+}
+.importancia-alta{
+    border: 2px solid tomato;
+    background-color: #ffb1a3;
 }
 .tableActions{
     display: flex;
