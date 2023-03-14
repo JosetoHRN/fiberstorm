@@ -5,10 +5,17 @@
 
     try {
         $id=$_GET['id'];
-        $sql = "DELETE FROM inventario WHERE id = $id;";
+
+        $sql = "SELECT imagen FROM inventario WHERE id = $id;";
         $sentencia = $conn->prepare($sql);
         $sentencia->execute();
-        echo "Elemento eliminiado con éxito.";
+        $inv = $sentencia->fetch(PDO::FETCH_ASSOC);
+        echo json_encode($inv);
+        
+        // $sql = "DELETE FROM inventario WHERE id = $id;";
+        // $sentencia = $conn->prepare($sql);
+        // $sentencia->execute();
+        // echo "Elemento eliminiado con éxito.";
     } catch (Exception $e) {
         echo 'Error: '.$e;
     }
