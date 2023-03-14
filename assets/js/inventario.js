@@ -52,7 +52,8 @@ const getData = async () => {
                     }else if(index == 5){
                         let data = document.createElement('p');
                         data.innerText = value;
-                        data.classList.add(`importancia importancia-${value.toLowerCase()}`);
+                        data.classList.add(`importancia`);
+                        data.classList.add(`importancia-${value.toLowerCase()}`);
                         row.appendChild(data);
                     }else{
                         let data = document.createElement('p');
