@@ -78,7 +78,7 @@ li > img{
     max-width: 32px;
     max-height: 32px;
 }
-li > p.importancia{
+.importancia{
     color: black;
     padding: 4px 16px;
     border-radius: 6px;
