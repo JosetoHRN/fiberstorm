@@ -20,6 +20,8 @@
 
         $fileName_to_insert = $img_name;
         if($_FILES['imagen']['name'] != "" && $_FILES['imagen']['size'] > 0) {
+            $archivo_a_borrar = "../../assets/img/inventario/$fileName_to_insert";
+            unlink($archivo_a_borrar);
             $uploads_dir = '../../assets/img/inventario/';
             $target_file = $uploads_dir . $_FILES["imagen"]["name"];
             if (move_uploaded_file($_FILES["imagen"]["tmp_name"], $target_file)) {

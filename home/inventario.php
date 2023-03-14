@@ -110,7 +110,7 @@ include_once("../components/header.php");
                 <input type="number" name="cantidad" id="cantidadPUT" min="0" required>
             </div>
             <div class="botonera">
-                <button class="closeForm secondary-light">Cancelar</button>
+                <a class="closeForm secondary-light">Cancelar</a>
                 <input type="submit" value="Aceptar">
             </div>
         </form>
