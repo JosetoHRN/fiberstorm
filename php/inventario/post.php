@@ -21,7 +21,7 @@
         $cantidad = isset($_POST['cantidad']) ? (int) $_POST['cantidad'] : 1 ;
         $cantidad = (int) $_POST['cantidad'];
 
-        $sql = "INSERT INTO inventario (modelo, tipo, ref, imagen, importancia, estado, cantidad) VALUES ($modelo, $tipo, $ref, $fileName_to_insert, $importancia, $estado, $cantidad);";
+        $sql = "INSERT INTO inventario (modelo, tipo, ref, imagen, importancia, estado, cantidad) VALUES ('$modelo', '$tipo', '$ref', '$fileName_to_insert', '$importancia', '$estado', '$cantidad');";
         $sentencia = $conn->prepare($sql);
         $sentencia->execute();
 
