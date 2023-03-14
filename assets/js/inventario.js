@@ -99,7 +99,23 @@ const modifyItem = (e) =>{
             childs.push(elements[i].src);
         }
     }
-    formPUT.querySelector('#modelo').value = childs[0];
+    formPUT.querySelector('#modeloPUT').value = childs[0];
+    formPUT.querySelector('#tipoPUT').value = childs[1];
+    formPUT.querySelector('#refPUT').value = childs[2];
+    formPUT.querySelector('img').src = childs[3];
+    switch (childs[4].toLowerCase()) {
+        case 'alta':
+            formPUT.querySelector('#importanciaPUT').children[2].selected=true;
+            break;
+        case 'media':
+            formPUT.querySelector('#importanciaPUT').children[1].selected=true;
+            break;
+        default:
+            formPUT.querySelector('#importanciaPUT').children[0].selected=true;
+            break;
+    }
+    formPUT.querySelector('#estadoPUT').value = childs[5];
+    formPUT.querySelector('#cantidadPUT').value = childs[6];
     formPUT.style.display = 'block';
 };
 
@@ -197,9 +213,9 @@ function addEventsTable(){
     const imgs = document.getElementById('tableContent').getElementsByTagName('img');
     for(let i=0; i<imgs.length; i++){
         imgs[i].addEventListener('click', ()=>{
-            imageViewer.style.display = "block";
             imageViewer.getElementsByTagName('img')[0].src = imgs[i].src;
             imageViewer.getElementsByTagName('img')[0].alt = imgs[i].alt;
+            imageViewer.style.display = "block";
         });
     }
 

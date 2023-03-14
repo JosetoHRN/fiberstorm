@@ -35,23 +35,23 @@ include_once("../components/header.php");
         <form action="../php/inventario/post.php" method="post" enctype="multipart/form-data">
             <div>
                 <label for="modelo">Modelo: </label>
-                <input type="text" name="modelo" id="modelo" placeholder="Modelo" required>
+                <input type="text" name="modelo" id="modeloPOST" placeholder="Modelo" required>
             </div>
             <div>
                 <label for="tipo">Tipo: </label>
-                <input type="text" name="tipo" id="tipo" placeholder="Tipo" required>
+                <input type="text" name="tipo" id="tipoPOST" placeholder="Tipo" required>
             </div>
             <div>
                 <label for="ref">Referencia: </label>
-                <input type="text" name="ref" id="ref" placeholder="Ubicación en el almacén">
+                <input type="text" name="ref" id="refPOST" placeholder="Ubicación en el almacén">
             </div>
             <div>
                 <label for="imagen">Icono: </label>
-                <input type="file" name="imagen" id="imagen" accept="image/png, image/jpg, image/jpeg">
+                <input type="file" name="imagen" id="imagenPOST" accept="image/png, image/jpg, image/jpeg">
             </div>
             <div>
                 <label for="importancia">Importancia: </label>
-                <select name="importancia" id="importancia" required>
+                <select name="importancia" id="importanciaPOST" required>
                     <option value="Normal" selected>Normal</option>
                     <option value="Media">Media</option>
                     <option value="Alta">Alta</option>
@@ -59,11 +59,11 @@ include_once("../components/header.php");
             </div>
             <div>
                 <label for="estado">Estado: </label>
-                <input type="text" name="estado" id="estado" placeholder="En corte, En almacén, En costura, etc.">
+                <input type="text" name="estado" id="estadoPOST" placeholder="En corte, En almacén, En costura, etc.">
             </div>
             <div>
                 <label for="cantidad">Cantidad: </label>
-                <input type="number" name="cantidad" id="cantidad" min="0" value="1" required>
+                <input type="number" name="cantidad" id="cantidadPOST" min="0" value="1" required>
             </div>
             <div class="botonera">
                 <input type="submit" value="Aceptar">
@@ -77,23 +77,25 @@ include_once("../components/header.php");
         <form>
             <div>
                 <label for="modelo">Modelo: </label>
-                <input type="text" name="modelo" id="modelo" required>
+                <input type="text" name="modelo" id="modeloPUT" required>
             </div>
             <div>
                 <label for="tipo">Tipo: </label>
-                <input type="text" name="tipo" id="tipo" required>
+                <input type="text" name="tipo" id="tipoPUT" required>
             </div>
             <div>
                 <label for="ref">Referencia: </label>
-                <input type="text" name="ref" id="ref">
+                <input type="text" name="ref" id="refPUT">
             </div>
             <div>
                 <label for="imagen">Icono: </label>
-                <input type="file" name="imagen" id="imagen" accept="image/png, image/jpg, image/jpeg">
+                <img src="" alt="" style="width: 64px; height: 64px;">
+                <input type="file" name="imagen" id="imagenPUT" accept="image/png, image/jpg, image/jpeg">
+                <button>Deshacer cambios</button>
             </div>
             <div>
                 <label for="importancia">Importancia: </label>
-                <select name="importancia" id="importancia" required>
+                <select name="importancia" id="importanciaPUT" required>
                     <option value="Normal">Normal</option>
                     <option value="Media">Media</option>
                     <option value="Alta">Alta</option>
@@ -101,11 +103,11 @@ include_once("../components/header.php");
             </div>
             <div>
                 <label for="estado">Estado: </label>
-                <input type="text" name="estado" id="estado">
+                <input type="text" name="estado" id="estadoPUT">
             </div>
             <div>
                 <label for="cantidad">Cantidad: </label>
-                <input type="number" name="cantidad" id="cantidad" min="0" required>
+                <input type="number" name="cantidad" id="cantidadPUT" min="0" required>
             </div>
             <div class="botonera">
                 <input type="submit" value="Aceptar">
