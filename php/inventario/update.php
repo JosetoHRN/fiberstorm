@@ -27,7 +27,7 @@
             }
         }
 
-        $sql = "UPDATE inventario SET modelo=$modelo, tipo=$tipo, ref=$ref, importancia=$importancia, imagen=$fileName_to_insert, estado=$estado, cantidad=$cantidad WHERE id=$id;";
+        $sql = "UPDATE inventario SET modelo='$modelo', tipo='$tipo', ref='$ref', importancia='$importancia', imagen='$fileName_to_insert', estado='$estado', cantidad=$cantidad WHERE id=$id;";
         $sentencia = $conn->prepare($sql);
         $sentencia->execute();
 
