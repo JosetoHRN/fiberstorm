@@ -99,7 +99,7 @@ const modifyItem = (e) =>{
             childs.push(elements[i].src);
         }
     }
-    formPUT.getElementById('modelo').value = childs[0];
+    formPUT.querySelector('#modelo').value = childs[0];
     formPUT.style.display = 'block';
 };
 
