@@ -99,8 +99,8 @@ li > img:hover{
     background-color: #ffcca9;
 }
 .importancia-alta{
-    border: 2px solid tomato;
-    background-color: #ffb1a3;
+    border: 2px solid red;
+    background-color: #ff8080;
 }
 .tableActions{
     display: flex;

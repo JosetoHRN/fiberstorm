@@ -7,8 +7,11 @@ buttonPOST.addEventListener('click', () => {
 const closePopups = document.getElementsByClassName('close_popup');
 for(let i=0; i<closePopups.length; i++){
     closePopups[i].addEventListener('click', (e) => {
-        console.log('e.target :>> ', e.target);
-        // e.target.parentNode.style.display='none';
+        if (e.target.nodeName == 'path'){
+            e.target.parentNode.parentNode.style.display='none';
+        }else if (e.target.nodeName == 'svg'){
+            e.target.parentNode.style.display='none';
+        }
     });
 }
 const closeForm = document.getElementsByClassName('closeForm');
