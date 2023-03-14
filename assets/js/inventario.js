@@ -116,12 +116,26 @@ const sortBy = document.getElementById('sortBy');
 sortBy.addEventListener('change', (e) => {
     const sortTerm = e.target.value;
     const rows = tableContent.getElementsByTagName('li');
+    const newRows = [];
     for(let i=0; i<rows.length; i++){
         const children = rows[i].children;
         let arr = [];
         for(let j=0; j<children.length; j++){
             arr.push(children[j].innerText.toLowerCase())
         }
-        console.log('arr :>> ', arr);
+        newRows.push(arr);
     }
+    console.log('rows without order :>> ', newRows);
+    newRows.sort((a,b) => {
+        const aValue = a[sortTerm];
+        const bValue = b[sortTerm];
+        if (aValue < bValue) {
+            return -1;
+        }
+        if (aValue > bValue) {
+            return 1;
+        }
+        return 0;
+    });
+    
 });
