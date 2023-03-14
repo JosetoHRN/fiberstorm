@@ -137,5 +137,6 @@ sortBy.addEventListener('change', (e) => {
         }
         return 0;
     });
+    console.log('newRows :>> ', newRows);
     
 });
