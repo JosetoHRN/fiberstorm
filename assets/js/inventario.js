@@ -159,3 +159,11 @@ sortBy.addEventListener('change', (e) => {
         }
     }
 });
+
+const imgs = document.getElementById('tableContent').getElementsByTagName('img');
+for(let i=0; i<imgs.length; i++){
+    imgs[i].addEventListener('click', (e)=>{
+        const url = e.target.src;
+        console.log('url :>> ', url);
+    });
+}
