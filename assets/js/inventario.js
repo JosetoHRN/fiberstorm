@@ -89,7 +89,7 @@ getData();
 const formPUT = document.getElementById('PUT_form');
 
 const modifyItem = (e) =>{
-    console.log('e.target :>> ', e.target);
+    console.log('e :>> ', e);
     formPUT.style.display = 'block';
     // Show put form and submit fetch
     console.log('modify item: ', id);
