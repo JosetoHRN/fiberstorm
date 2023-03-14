@@ -116,8 +116,12 @@ const sortBy = document.getElementById('sortBy');
 sortBy.addEventListener('change', (e) => {
     const sortTerm = e.target.value;
     const rows = tableContent.getElementsByTagName('li');
-    console.log('sortTerm :>> ', sortTerm);
     for(let i=0; i<rows.length; i++){
-        
+        const children = rows[i].children;
+        let arr = [];
+        for(let j=0; j<children.length; j++){
+            arr.push(children[j].innerText.toLowerCase())
+        }
+        console.log('arr :>> ', arr);
     }
 });
