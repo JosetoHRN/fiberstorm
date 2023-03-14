@@ -13,7 +13,8 @@ include_once("../components/header.php");
         <div class="sortBy">
             <label for="sortBy">Ordenar:</label>
             <select name="sortBy" id="sortBy">
-                <option value="importancia" selected>Importancia</option>
+                <option value="" disabled selected>Elija un orden</option>
+                <option value="importancia">Importancia</option>
                 <option value="modelo">Modelo</option>
                 <option value="tipo">Tipo</option>
                 <option value="ref">Referencia</option>
