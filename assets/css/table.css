@@ -78,6 +78,24 @@ li > img{
     max-width: 48px;
     max-height: 48px;
 }
+li > p.importancia-normal{
+    color: #68CE42;
+    border: 1px solid #68CE42;
+    background-color: #b4e7a1;
+    padding: 4px 16px;
+}
+li > p.importancia-media{
+    color: #FF9952;
+    border: 1px solid #FF9952;
+    background-color: #ffcca9;
+    padding: 4px 16px;
+}
+li > p.importancia-alta{
+    color: tomato;
+    border: 1px solid tomato;
+    background-color: #ffb1a3;
+    padding: 4px 16px;
+}
 .tableActions{
     display: flex;
     flex-wrap: nowrap;

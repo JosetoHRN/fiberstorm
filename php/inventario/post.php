@@ -5,13 +5,13 @@
 
     if(isset($_POST['submit'])) {
         $fileName_to_insert = 'inventario_default.png';
-        // if($_FILES['imagen']['name'] != "" && $_FILES['imagen']['size'] > 0) {
-        //     $uploads_dir = '../../assets/img/inventario/';
-        //     $target_file = $uploads_dir . $_FILES["imagen"]["name"];
-        //     if (move_uploaded_file($_FILES["imagen"]["tmp_name"], $target_file)) {
-        //         $fileName_to_insert = $_FILES["imagen"]["name"];
-        //     }
-        // }
+        if($_FILES['imagen']['name'] != "" && $_FILES['imagen']['size'] > 0) {
+            $uploads_dir = '../../assets/img/inventario/';
+            $target_file = $uploads_dir . $_FILES["imagen"]["name"];
+            if (move_uploaded_file($_FILES["imagen"]["tmp_name"], $target_file)) {
+                $fileName_to_insert = $_FILES["imagen"]["name"];
+            }
+        }
         
 
         $modelo = $_POST['modelo'];
