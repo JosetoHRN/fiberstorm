@@ -10,7 +10,7 @@
         $sentencia = $conn->prepare($sql);
         $sentencia->execute();
         $inv = $sentencia->fetch(PDO::FETCH_ASSOC);
-        echo $inv;
+        echo $inv['imagen'];
 
         // $sql = "DELETE FROM inventario WHERE id = $id;";
         // $sentencia = $conn->prepare($sql);
