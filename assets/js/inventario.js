@@ -162,6 +162,7 @@ sortBy.addEventListener('change', (e) => {
 
 const imgs = document.getElementById('tableContent').getElementsByTagName('img');
 for(let i=0; i<imgs.length; i++){
+    console.log('imgs[i] :>> ', imgs[i]);
     imgs[i].addEventListener('click', (e)=>{
         const url = imgs[i].src;
         console.log('url :>> ', url, e);
