@@ -97,6 +97,20 @@ const deleteItem = (id) =>{
     let text = "¿Desea eliminar este objeto del inventario?";
     if (confirm(text) == true) {
         // fetch delete method
+        fetch(`../php/inventario/delete.php?id=${id}`,{
+            method: 'DELETE',
+            headers:{
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(res => res.text())
+        .then(data => {
+            console.log('data :>> ', data);
+            document.getElementById('inventario-'+id).style.display='none';
+        })
+        .catch(err => console.log('err :>> ', err));
+
         console.log('deleted item :>> ', id);
     }
 };

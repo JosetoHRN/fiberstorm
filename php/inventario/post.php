@@ -15,11 +15,10 @@
 
         $modelo = $_POST['modelo'];
         $tipo = $_POST['tipo'];
-        $ref = isset($_POST['referencia']) ? $_POST['referencia'] : '-' ;
+        $ref = isset($_POST['ref']) ? $_POST['ref'] : '-' ;
         $importancia = isset($_POST['importancia']) ? $_POST['importancia'] : 'Normal' ;
         $estado = isset($_POST['estado']) ? $_POST['estado'] : '-' ;
         $cantidad = isset($_POST['cantidad']) ? (int) $_POST['cantidad'] : 1 ;
-        $cantidad = (int) $_POST['cantidad'];
 
         $sql = "INSERT INTO inventario (modelo, tipo, ref, imagen, importancia, estado, cantidad) VALUES ('$modelo', '$tipo', '$ref', '$fileName_to_insert', '$importancia', '$estado', '$cantidad');";
         $sentencia = $conn->prepare($sql);
@@ -29,4 +28,5 @@
     } catch (Exception $e) {
         echo 'Error: '.$e;
     }
+    die();
 ?>
