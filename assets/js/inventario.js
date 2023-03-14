@@ -87,12 +87,20 @@ const getData = async () => {
 getData();
 
 const formPUT = document.getElementById('PUT_form');
-
 const modifyItem = (e) =>{
-    console.log('e :>> ', e);
+    const row = e.parentNode.parentNode.parentNode;
+    const id = row.id.split('-')[1];
+    const elements = row.children;
+    const childs = [];
+    for(let i=0; i<elements.length; i++){
+        if(elements[i].nodeName.toLowerCase() == 'p'){
+            childs.push(elements[i].innerText);
+        }else if(elements[i].nodeName.toLowerCase() == 'img'){
+            childs.push(elements[i].src);
+        }
+    }
+    formPUT.getElementById('modelo').value = childs[0];
     formPUT.style.display = 'block';
-    // Show put form and submit fetch
-    console.log('modify item: ', id);
 };
 
 const deleteItem = (id) =>{

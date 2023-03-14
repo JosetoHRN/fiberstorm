@@ -112,14 +112,14 @@ form select {
 form option:focus{
     background-color: var(--orange-light);
 }
-#POST_form .botonera{
+.botonera{
     padding-top: 24px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     gap: 10px;
 }
-#POST_form .botonera > *{
+.botonera > *{
     padding: 8px 24px;
     background-color: var(--light);
     border: none;
