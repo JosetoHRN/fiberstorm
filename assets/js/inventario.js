@@ -111,3 +111,13 @@ searchBar.addEventListener('input', (e) => {
         }
     }
 });
+
+const sortBy = document.getElementById('sortBy');
+sortBy.addEventListener('change', (e) => {
+    const sortTerm = e.target.value;
+    const rows = tableContent.getElementsByTagName('li');
+    console.log('sortTerm :>> ', sortTerm);
+    for(let i=0; i<rows.length; i++){
+        
+    }
+});

@@ -10,12 +10,15 @@ include_once("../components/header.php");
             <input type="text" id="searchBar" placeholder="Búsqueda (tildes y signos de puntuación cuentan)"/>
             <img src="../assets/img/search.png" alt="icono lupa"/>
         </div>
-        <!-- <div class="sortBy">
+        <div class="sortBy">
             <label for="sortBy">Ordenar:</label>
             <select name="sortBy" id="sortBy">
-                {keys.map((key) => <option value={key}>{key}</option>)}
+                <option value="importancia" selected>Importancia</option>
+                <option value="modelo">Modelo</option>
+                <option value="tipo">Tipo</option>
+                <option value="ref">Referencia</option>
             </select>
-        </div> -->
+        </div>
     </section>
     <div id="tableHeader"></div>
     <ul id="tableContent"></ul>
