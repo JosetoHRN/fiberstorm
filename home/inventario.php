@@ -7,7 +7,7 @@ include_once("../components/header.php");
     <button class="primary" id="postInventario">Añadir inventario</button>
     <section id="tableOptions">
         <div class="searchBar">
-            <input type="text" id="searchBar" placeholder="Búsqueda (tildes y signos de puntuación cuentan)"/>
+            <input type="text" id="searchBar" placeholder="Búsqueda (cuidado con tildes y otros signos)"/>
             <img src="../assets/img/search.png" alt="icono lupa"/>
         </div>
         <div class="sortBy">

@@ -73,13 +73,16 @@ main{
 }
 .close_popup:hover{
     cursor: pointer;
+    fill: var(--orange);
 }
 #imageViewer img{
     max-width: 100%;
+    margin-top: 24px;
 }
 /* FORMS */
 #POST_form{
     display: none; /* block */
+    min-width: 499px;
     z-index: 999;
     position: absolute;
     top: 50%;
