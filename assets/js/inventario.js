@@ -104,6 +104,7 @@ const deleteItem = (id) =>{
         })
         .then(res => res.text())
         .then(data => {
+            console.log('data :>> ', data);
             document.getElementById('inventario-'+id).style.display='none';
         })
         .catch(err => console.log('err :>> ', err));
