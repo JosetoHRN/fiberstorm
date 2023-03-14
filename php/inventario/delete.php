@@ -5,12 +5,10 @@
 
     try {
         $id=$_GET['id'];
-
         $sql = "DELETE FROM inventario WHERE id = $id;";
         $sentencia = $conn->prepare($sql);
         $sentencia->execute();
-
-        echo "Item borrado con éxito";
+        echo "Elemento eliminiado con éxito.";
     } catch (Exception $e) {
         echo 'Error: '.$e;
     }

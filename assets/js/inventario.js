@@ -76,12 +76,10 @@ const getData = async () => {
             row.appendChild(data);
             tableContent.appendChild(row);
         });
-        
     })
     .catch(err => console.log('err :>> ', err))
     .finally(()=> {
         //Remove loading
-        console.log('finally');
         addEventsTable();
     });
 };
@@ -106,12 +104,9 @@ const deleteItem = (id) =>{
         })
         .then(res => res.text())
         .then(data => {
-            console.log('data :>> ', data);
             document.getElementById('inventario-'+id).style.display='none';
         })
         .catch(err => console.log('err :>> ', err));
-
-        console.log('deleted item :>> ', id);
     }
 };
 
