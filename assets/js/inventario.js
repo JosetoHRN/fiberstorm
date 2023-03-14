@@ -162,8 +162,8 @@ sortBy.addEventListener('change', (e) => {
 
 const imgs = document.getElementById('tableContent').getElementsByTagName('img');
 for(let i=0; i<imgs.length; i++){
-    imgs[i].addEventListener('click', ()=>{
+    imgs[i].addEventListener('click', (e)=>{
         const url = imgs[i].src;
-        console.log('url :>> ', url);
+        console.log('url :>> ', url, e);
     });
 }
