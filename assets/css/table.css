@@ -84,7 +84,7 @@ li > img{
 li > img:hover{
     cursor: pointer;
 }
-li > .tableActions > *:hover{
+li .tableActions > *:hover{
     cursor: pointer;
 }
 .importancia{
