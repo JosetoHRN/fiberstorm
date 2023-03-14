@@ -46,7 +46,7 @@ include_once("../components/header.php");
                 <input type="text" name="ref" id="refPOST" placeholder="Ubicación en el almacén">
             </div>
             <div>
-                <label for="imagen">Icono: </label>
+                <label for="imagen">Imagen: </label>
                 <input type="file" name="imagen" id="imagenPOST" accept="image/png, image/jpg, image/jpeg">
             </div>
             <div>
@@ -66,8 +66,8 @@ include_once("../components/header.php");
                 <input type="number" name="cantidad" id="cantidadPOST" min="0" value="1" required>
             </div>
             <div class="botonera">
+                <button class="closeForm secondary-light">Cancelar</button>
                 <input type="submit" value="Aceptar">
-                <button class="closeForm">Cancelar</button>
             </div>
         </form>
     </div>
@@ -88,10 +88,9 @@ include_once("../components/header.php");
                 <input type="text" name="ref" id="refPUT">
             </div>
             <div>
-                <label for="imagen">Icono: </label>
+                <label for="imagen">Imagen: </label>
                 <img src="" alt="" style="width: 64px; height: 64px;">
                 <input type="file" name="imagen" id="imagenPUT" accept="image/png, image/jpg, image/jpeg">
-                <button>Deshacer cambios</button>
             </div>
             <div>
                 <label for="importancia">Importancia: </label>
@@ -110,8 +109,8 @@ include_once("../components/header.php");
                 <input type="number" name="cantidad" id="cantidadPUT" min="0" required>
             </div>
             <div class="botonera">
+                <button class="closeForm secondary-light">Cancelar</button>
                 <input type="submit" value="Aceptar">
-                <button class="closeForm">Cancelar</button>
             </div>
         </form>
     </div>
