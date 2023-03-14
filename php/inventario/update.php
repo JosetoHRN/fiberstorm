@@ -4,7 +4,21 @@
     $conn = $database->getConnection();
 
     try {
-        $fileName_to_insert = 'inventario_default.png';
+        $id = $_POST['id'];
+        $modelo = $_POST['modelo'];
+        $tipo = $_POST['tipo'];
+        $ref = $_POST['ref'];
+        $importancia = $_POST['importancia'];
+        $estado = $_POST['estado'];
+        $cantidad = (int) $_POST['cantidad'];
+
+        $sql = "SELECT imagen FROM inventario WHERE id = $id;";
+        $sentencia = $conn->prepare($sql);
+        $sentencia->execute();
+        $data = $sentencia->fetch(PDO::FETCH_ASSOC);
+        $img_name = $data['imagen'];
+
+        $fileName_to_insert = $img_name;
         if($_FILES['imagen']['name'] != "" && $_FILES['imagen']['size'] > 0) {
             $uploads_dir = '../../assets/img/inventario/';
             $target_file = $uploads_dir . $_FILES["imagen"]["name"];
@@ -13,14 +27,7 @@
             }
         }
 
-        $modelo = $_POST['modelo'];
-        $tipo = $_POST['tipo'];
-        $ref = isset($_POST['ref']) ? $_POST['ref'] : '-' ;
-        $importancia = isset($_POST['importancia']) ? $_POST['importancia'] : 'Normal' ;
-        $estado = isset($_POST['estado']) ? $_POST['estado'] : '-' ;
-        $cantidad = isset($_POST['cantidad']) ? (int) $_POST['cantidad'] : 1 ;
-
-        $sql = "INSERT INTO inventario (modelo, tipo, ref, imagen, importancia, estado, cantidad) VALUES ('$modelo', '$tipo', '$ref', '$fileName_to_insert', '$importancia', '$estado', '$cantidad');";
+        $sql = "UPDATE inventario SET modelo=$modelo, tipo=$tipo, ref=$ref, importancia=$importancia, imagen=$fileName_to_insert, estado=$estado, cantidad=$cantidad WHERE id=$id;";
         $sentencia = $conn->prepare($sql);
         $sentencia->execute();
 

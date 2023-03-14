@@ -66,7 +66,7 @@ include_once("../components/header.php");
                 <input type="number" name="cantidad" id="cantidadPOST" min="0" value="1" required>
             </div>
             <div class="botonera">
-                <button class="closeForm secondary-light">Cancelar</button>
+                <a class="closeForm secondary-light">Cancelar</a>
                 <input type="submit" value="Aceptar">
             </div>
         </form>
@@ -74,7 +74,8 @@ include_once("../components/header.php");
 
     <div id="PUT_form">
         <h3>Modificando...</h3>
-        <form>
+        <form action="../php/inventario/update.php" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="id" id="idPUT" />
             <div>
                 <label for="modelo">Modelo: </label>
                 <input type="text" name="modelo" id="modeloPUT" required>

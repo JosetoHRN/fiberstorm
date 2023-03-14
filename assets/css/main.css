@@ -128,6 +128,10 @@ form option:focus{
     text-transform: uppercase;
     font-weight: bold;
 }
+.botonera > a{
+    text-decoration: underline;
+    margin-right: 20px;
+}
 .botonera > *:hover{
     cursor: pointer;
 }

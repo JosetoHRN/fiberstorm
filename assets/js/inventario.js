@@ -99,6 +99,7 @@ const modifyItem = (e) =>{
             childs.push(elements[i].src);
         }
     }
+    formPUT.querySelector('#idPUT').value = id;
     formPUT.querySelector('#modeloPUT').value = childs[0];
     formPUT.querySelector('#tipoPUT').value = childs[1];
     formPUT.querySelector('#refPUT').value = childs[2];
